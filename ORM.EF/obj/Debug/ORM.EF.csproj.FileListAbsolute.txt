@@ -1,0 +1,10 @@
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\ORM.EF.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\ORM.EF.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\ORM.EF.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\EntityFramework.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\EntityFramework.SqlServer.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\EntityFramework.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\bin\Debug\EntityFramework.SqlServer.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\obj\Debug\ORM.EF.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\obj\Debug\ORM.EF.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\obj\Debug\ORM.EF.pdb

@@ -1,0 +1,67 @@
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DependencyResolver.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DependencyResolver.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\BLL.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\BLL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DAL.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DAL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\Ninject.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\BLL.Interface.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\BLL.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DAL.Interface.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DAL.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\Ninject.xml
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\obj\Debug\DependencyResolver.csprojResolveAssemblyReference.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\obj\Debug\DependencyResolver.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\obj\Debug\DependencyResolver.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\obj\Debug\DependencyResolver.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DAL.Fake.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DependencyResolver\bin\Debug\DAL.Fake.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\obj\Debug\DependencyResolver.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DependencyResolver.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DependencyResolver.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\BLL.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DAL.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DAL.Fake.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\Ninject.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\BLL.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DAL.Fake.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\DAL.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DependencyResolver\bin\Debug\Ninject.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DependencyResolver.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DependencyResolver.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DependencyResolver.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\BLL.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.DB.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.Fake.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\Ninject.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\ORM.EF.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\EntityFramework.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\BLL.Interface.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\BLL.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\BLL.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.DB.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.DB.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.Fake.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.Fake.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.Interface.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\DAL.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\Ninject.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\ORM.EF.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\ORM.EF.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\EntityFramework.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.pdb
