@@ -1,0 +1,17 @@
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\bin\Debug\BLL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\bin\Debug\BLL.Interface.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\obj\Debug\BLL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\BLL.Interface\obj\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL.Interface\bin\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL.Interface\bin\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Interface\bin\Debug\BLL.Interface.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Interface\bin\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Interface\bin\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.pdb
