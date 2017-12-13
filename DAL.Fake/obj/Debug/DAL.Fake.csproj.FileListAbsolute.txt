@@ -1,0 +1,26 @@
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\obj\Debug\DAL.Fake.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\bin\Debug\DAL.Fake.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\bin\Debug\DAL.Fake.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\bin\Debug\DAL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\bin\Debug\DAL.Interface.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\obj\Debug\DAL.Fake.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\obj\Debug\DAL.Fake.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL.Fake\obj\Debug\DAL.Fake.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\bin\Debug\DAL.Fake.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\bin\Debug\DAL.Fake.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Fake\obj\Debug\DAL.Fake.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Fake.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Fake.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Fake.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Interface.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.pdb

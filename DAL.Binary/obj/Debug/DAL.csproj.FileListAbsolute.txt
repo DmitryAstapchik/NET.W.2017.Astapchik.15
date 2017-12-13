@@ -1,0 +1,36 @@
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\bin\Debug\DAL.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\bin\Debug\DAL.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\bin\Debug\DAL.Interface.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\bin\Debug\DAL.Interface.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\obj\Debug\DAL.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\obj\Debug\DAL.pdb
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\bin\Debug\System.ValueTuple.dll
+C:\Users\MIB\Desktop\AccountSystemApplication\DAL\bin\Debug\System.ValueTuple.xml
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\bin\Debug\DAL.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\bin\Debug\DAL.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\bin\Debug\System.ValueTuple.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\bin\Debug\System.ValueTuple.xml
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\obj\Debug\DAL.dll
+E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL\obj\Debug\DAL.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\DAL.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\DAL.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\DAL.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\EntityFramework.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\System.ValueTuple.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\DAL.Interface.dll.config
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\EntityFramework.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\bin\Debug\System.ValueTuple.xml
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.dll
+E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.pdb
