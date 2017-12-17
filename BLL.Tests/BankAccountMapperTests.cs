@@ -37,14 +37,14 @@ namespace BLL.Tests
         public void FromDTOTest(AccountDTO dto)
         {
             var account = BankAccountMapper.FromDTO(dto);
-            Assert.That(account.IBAN == dto.IBAN && account.Owner == dto.Owner && account.Balance == dto.Balance && account.BonusPoints == dto.BonusPoints && account.GetType().FullName == dto.AccountType);
+            Assert.That(account.IBAN == dto.IBAN && account.Owner == dto.Owner && account.Balance == dto.Balance && account.BonusPoints == dto.BonusPoints && account.GetType().FullName == dto.Type);
         }
 
         [TestCaseSource("ToDTOTestCases")]
         public void ToDTOTest(BankAccount account)
         {
             var dto = BankAccountMapper.ToDTO(account);
-            Assert.That(dto.IBAN == account.IBAN && dto.Owner == account.Owner  && dto.Balance == account.Balance && dto.BonusPoints == account.BonusPoints && dto.AccountType == account.GetType().FullName);
+            Assert.That(dto.IBAN == account.IBAN && dto.Owner == account.Owner  && dto.Balance == account.Balance && dto.BonusPoints == account.BonusPoints && dto.Type == account.GetType().FullName);
         }
     }
 }

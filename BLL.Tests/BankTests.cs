@@ -72,16 +72,16 @@ namespace BLL.Tests
             Assert.DoesNotThrow(() => bank.OpenAccount("holder", 50));
 
             bank.OpenAccount("holder", 1000);
-            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.AccountType == typeof(StandardAccount).FullName)));
+            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.Type == typeof(StandardAccount).FullName)));
 
             bank.OpenAccount("holder", 1001);
-            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.AccountType == typeof(GoldAccount).FullName)));
+            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.Type == typeof(GoldAccount).FullName)));
 
             bank.OpenAccount("holder", 10000);
-            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.AccountType == typeof(GoldAccount).FullName)));
+            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.Type == typeof(GoldAccount).FullName)));
 
             bank.OpenAccount("holder", 10001);
-            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.AccountType == typeof(PlatinumAccount).FullName)));
+            storageMock.Verify(st => st.Create(It.Is<AccountDTO>(acc => acc.Type == typeof(PlatinumAccount).FullName)));
         }
     }
 }
