@@ -15,8 +15,8 @@ namespace DependencyResolver
             kernel.Bind<IBonusPointsCalculator>().To<BonusCalculator>();
 
             // kernel.Bind<IAccountStorage>().To<BinaryFileStorage>().WithConstructorArgument("test.bin");
-            // kernel.Bind<IAccountStorage>().To<ListStorage>();
-            kernel.Bind<IAccountRepository>().To<DBStorage>();
+             kernel.Bind<IAccountRepository>().To<ListStorage>();
+            //kernel.Bind<IAccountRepository>().To<DBStorage>();
             kernel.Bind<IIBANGenerator>().To<IBANGenerator>().InSingletonScope();
             kernel.Bind<IAccountService>().To<Bank>();
          
