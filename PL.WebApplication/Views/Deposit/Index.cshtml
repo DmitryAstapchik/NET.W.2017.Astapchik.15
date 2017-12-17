@@ -1,0 +1,8 @@
+﻿@model IEnumerable<BLL.Interface.BankAccount>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Make a deposit</h2>
+
+@Html.Partial("SelectAccount", Model, ViewData)

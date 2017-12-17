@@ -1,0 +1,11 @@
+﻿@model BLL.Interface.BankAccount
+@{
+    ViewBag.Title = "MakeDeposit";
+}
+
+<h2>Deposit of @ViewBag.Amount.ToString("C") is made</h2>
+
+@Html.Partial("AccountInfo", Model)
+<h5>
+    @Html.ActionLink("back to account list", "Index", "Deposit")
+</h5>

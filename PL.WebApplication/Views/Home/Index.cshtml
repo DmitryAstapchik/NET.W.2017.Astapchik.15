@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<br />
+<ul>
+    <li>@Html.ActionLink("Make a deposit", "Index", "Deposit")</li>
+    <li>@Html.ActionLink("Make a withdrawal", "Index", "Withdraw")</li>
+    <li>@Html.ActionLink("Create new account", "Index", "Create")</li>
+    <li>@Html.ActionLink("Close an account", "Index", "Close")</li>
+    <br />
+    <li>@Html.ActionLink("View list of accounts", "ViewAccountList", "Home")</li>
+</ul>
