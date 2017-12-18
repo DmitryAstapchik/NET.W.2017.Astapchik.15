@@ -59,3 +59,7 @@ E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BL
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.dll
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.pdb
+E:\studying\programming\from epam github\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.csprojResolveAssemblyReference.cache
+E:\studying\programming\from epam github\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.csproj.CoreCompileInputs.cache
+E:\studying\programming\from epam github\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.dll
+E:\studying\programming\from epam github\NET.W.2017.Astapchik.15\BLL.Tests\obj\Debug\BLL.Tests.pdb

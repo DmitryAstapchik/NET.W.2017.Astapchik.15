@@ -1,9 +1,0 @@
-﻿@model BLL.Interface.BankAccount
-@{
-    ViewBag.Title = "Closed";
-}
-
-<h2>An account is closed</h2>
-
-@Html.Partial("AccountInfo", Model)
-@Html.ActionLink("back to account list", "Index", "Close")
