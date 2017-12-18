@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+@{
+    ViewBag.Title = "SelectAccount";
+}
+
+<style>
+    td, th{
+        text-align:center
+    }
+</style>
+
+<h2>Select an account</h2>
+
+<table  rules="rows" frame="hsides" cellpadding="2">
+    <thead bgcolor="lightgrey">
+        <tr>
+            <th>IBAN</th>
+            <th>Owner</th>
+            <th>Balance</th>
+            <th>Account type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var acc in Model)
+        {
+            <tr>
+                <td>@acc.IBAN</td>
+                <td>@acc.Owner</td>
+                <td>@acc.Balance</td>
+                <td>@acc.AccountType</td>
+                <td>
+                    @using (Html.BeginForm((string)ViewData["action"], "Home"))
+                {
+                        <input type="hidden" name="iban" value="@acc.IBAN" />
+                        <button>@((string)ViewData["command"])</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h5>@Html.ActionLink("back to account service", "Index", "Home")</h5> 

@@ -21,7 +21,7 @@ namespace BLL
         /// <returns>bank account instance</returns>
         public static BankAccount FromDTO(this AccountDTO dto)
         {
-            return (BankAccount)Assembly.GetAssembly(typeof(BankAccount)).GetType(dto.AccountType).GetConstructors(BindingFlags.Instance | BindingFlags.Public)[0].Invoke(new object[] { dto.IBAN, dto.Owner, dto.Balance, dto.BonusPoints });
+            return (BankAccount)Assembly.GetAssembly(typeof(BankAccount)).GetType("BLL.Interface." + dto.Type.ToString()).GetConstructors(BindingFlags.Instance | BindingFlags.Public)[0].Invoke(new object[] { dto.IBAN, dto.Owner, dto.Balance, dto.BonusPoints });
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace BLL
         /// <returns>DTO instance</returns>
         public static AccountDTO ToDTO(this BankAccount account)
         {
-            return new AccountDTO(account.IBAN, account.Owner, account.Balance, account.BonusPoints, account.GetType().FullName);
+            return new AccountDTO(account.IBAN, account.Owner, account.Balance, account.BonusPoints, (AccountDTO.AccountType)Enum.Parse(typeof(AccountDTO.AccountType), account.GetType().Name));
         }
     }
 }

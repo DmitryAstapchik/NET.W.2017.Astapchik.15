@@ -1,0 +1,17 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new account</h2>
+
+@using (Html.BeginForm())
+{
+    <label>Owner:</label> 
+    @Html.EditorFor(Model => Model.Owner) 
+    <label>Start balance:</label> 
+    @Html.EditorFor(Model => Model.Balance) 
+    <input type="submit" value="Create" />
+}
+
+@Html.ActionLink("back to service", "index")

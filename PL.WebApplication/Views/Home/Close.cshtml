@@ -1,0 +1,12 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+@{
+    ViewBag.Title = "Close";
+}
+
+<h2>Close an account</h2>
+
+@{ 
+    ViewData["action"] = "close";
+    ViewData["command"] = "Close";
+}
+@Html.Partial("SelectAccount", Model, ViewData)

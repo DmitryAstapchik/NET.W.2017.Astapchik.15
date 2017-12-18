@@ -1,0 +1,12 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+@{
+    ViewBag.Title = "Withdraw";
+}
+
+<h2>Make a withdrawal</h2>
+
+@{
+    ViewData["action"] = "WithdrawFrom";
+    ViewData["command"] = "Withdraw";
+}
+@Html.Partial("SelectAccount", Model, ViewData)

@@ -14,7 +14,7 @@ namespace DAL.DB
         {
             return new Account
             {
-                AccountType = dto.AccountType,
+                AccountType = dto.Type.ToString(),
                 Balance = dto.Balance,
                 BonusPoints = dto.BonusPoints,
                 IBAN = dto.IBAN,
@@ -29,7 +29,7 @@ namespace DAL.DB
                 account.Owner,
                 account.Balance,
                 account.BonusPoints,
-                account.AccountType);
+                (AccountDTO.AccountType)Enum.Parse(typeof(AccountDTO.AccountType), account.AccountType));
         }
     }
 }

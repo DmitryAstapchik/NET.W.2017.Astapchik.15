@@ -1,0 +1,17 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "WithdrawFrom";
+}
+
+<h2>Withdraw from account</h2>
+
+@Html.Partial("AccountInfo", Model)
+
+@using (Html.BeginForm("MakeWithdrawal", "home"))
+{
+    <h2>Make a withdrawal</h2>
+    <label>Withdrawal amount:</label>
+    <input name="amount" />
+    <button type="submit">Withdraw</button>
+    <input type="hidden" name="iban" value="@Model.IBAN" />
+}

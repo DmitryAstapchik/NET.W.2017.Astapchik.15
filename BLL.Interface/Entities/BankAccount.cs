@@ -11,12 +11,12 @@ namespace BLL.Interface
         /// <summary>
         /// International Bank Account Number of an account.
         /// </summary>
-        public readonly string IBAN;
+        public string IBAN { get; private set; }
 
         /// <summary>
         /// Owner of an account.
         /// </summary>
-        public readonly string Owner;
+        public string Owner { get; private set; }
 
         /// <summary>
         /// an amount of money that considers effective for a bank
@@ -66,8 +66,8 @@ namespace BLL.Interface
 
             this.IBAN = iban;
             this.Owner = owner;
-            Balance = balance;
-            BonusPoints = bonusPoints;
+            this.Balance = balance;
+            this.BonusPoints = bonusPoints;
         }
         #endregion
 

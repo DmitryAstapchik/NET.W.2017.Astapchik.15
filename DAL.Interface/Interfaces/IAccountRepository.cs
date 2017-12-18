@@ -1,4 +1,6 @@
-﻿namespace DAL.Interface
+﻿using System.Collections.Generic;
+
+namespace DAL.Interface
 {
     /// <summary>
     /// Allows to work with a storage of bank accounts
@@ -30,5 +32,7 @@
         /// </summary>
         /// <param name="account">account to rewrite</param>
         void Update(AccountDTO account);
+
+        IEnumerable<AccountDTO> GetAllAccounts();
     }
 }

@@ -28,6 +28,11 @@ namespace DAL.DB
             }
         }
 
+        public IEnumerable<AccountDTO> GetAllAccounts()
+        {
+            throw new NotImplementedException();
+        }
+
         public AccountDTO GetByIban(string iban)
         {
             using (var context = new AccountModelContainer())
@@ -42,7 +47,7 @@ namespace DAL.DB
             using (var context = new AccountModelContainer())
             {
                 var toUpdate = context.AccountSet.Find(account.IBAN);
-                toUpdate.AccountType = account.AccountType;
+                toUpdate.AccountType = account.Type.ToString();
                 toUpdate.Balance = account.Balance;
                 toUpdate.BonusPoints = account.BonusPoints;
                 toUpdate.Owner = account.Owner;

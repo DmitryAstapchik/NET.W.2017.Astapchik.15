@@ -66,6 +66,14 @@ namespace BLL
             return acc.Balance;
         }
 
+        public IEnumerable<BankAccount> GetAllAccounts()
+        {
+            foreach (var item in this.Repository.GetAllAccounts())
+            {
+                yield return item.FromDTO();
+            }
+        }
+
         /// <summary>
         /// Makes a deposit of <paramref name="amount"/> to an account with specified <paramref name="iban"/>.
         /// </summary>

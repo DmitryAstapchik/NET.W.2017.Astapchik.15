@@ -145,11 +145,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CloseController.cs" />
-    <Compile Include="Controllers\CreateController.cs" />
-    <Compile Include="Controllers\DepositController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\WithdrawController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,20 +188,19 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Deposit\DepositTo.cshtml" />
+    <Content Include="Views\Home\DepositTo.cshtml" />
     <Content Include="Views\Shared\AccountInfo.cshtml" />
-    <Content Include="Views\Deposit\Index.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\BankAccount.cshtml" />
-    <Content Include="Views\Withdraw\Index.cshtml" />
+    <Content Include="Views\Home\Deposit.cshtml" />
+    <Content Include="Views\Home\Withdraw.cshtml" />
     <Content Include="Views\Shared\SelectAccount.cshtml" />
-    <Content Include="Views\Withdraw\WithdrawFrom.cshtml" />
-    <Content Include="Views\Withdraw\MakeWithdrawal.cshtml" />
-    <Content Include="Views\Create\Index.cshtml" />
-    <Content Include="Views\Deposit\MakeDeposit.cshtml" />
-    <Content Include="Views\Close\Index.cshtml" />
-    <Content Include="Views\Close\Closed.cshtml" />
-    <Content Include="Views\Create\Created.cshtml" />
-    <Content Include="Views\Home\ViewAccountList.cshtml" />
+    <Content Include="Views\Home\WithdrawFrom.cshtml" />
+    <Content Include="Views\Home\WithdrawalMade.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\DepositMade.cshtml" />
+    <Content Include="Views\Home\Close.cshtml" />
+    <Content Include="Views\Home\Closed.cshtml" />
+    <Content Include="Views\Home\Created.cshtml" />
+    <Content Include="Views\Home\AccountList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

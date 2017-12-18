@@ -18,16 +18,3 @@ E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days
 E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL\bin\Debug\DAL.Interface.dll
 E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL\bin\Debug\BLL.Interface.pdb
 E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\BLL\bin\Debug\DAL.Interface.pdb
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.dll.config
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.dll
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.pdb
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.Interface.dll
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\DAL.Interface.dll
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.Interface.pdb
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.Interface.dll.config
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\DAL.Interface.pdb
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\bin\Debug\DAL.Interface.dll.config
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.dll
-E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.pdb

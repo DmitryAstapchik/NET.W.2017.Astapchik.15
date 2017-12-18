@@ -1,4 +1,6 @@
-﻿namespace BLL.Interface
+﻿using System.Collections.Generic;
+
+namespace BLL.Interface
 {
     /// <summary>
     /// Service functionality to work with a bank account
@@ -35,5 +37,7 @@
         /// <param name="amount">withdrawal amount</param>
         /// <returns>new account balance</returns>
         decimal MakeWithdrawal(string iban, decimal amount);
+
+        IEnumerable<BankAccount> GetAllAccounts();
     }
 }

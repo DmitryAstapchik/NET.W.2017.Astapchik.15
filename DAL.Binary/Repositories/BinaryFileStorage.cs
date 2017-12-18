@@ -45,7 +45,7 @@ namespace DAL.Binary
                 writer.Write(account.Owner);
                 writer.Write(account.Balance);
                 writer.Write(account.BonusPoints);
-                writer.Write(account.AccountType);
+                writer.Write(account.Type.ToString());
             }
         }
 
@@ -74,7 +74,7 @@ namespace DAL.Binary
                 var balance = reader.ReadDecimal();
                 var bonus = reader.ReadSingle();
                 var type = reader.ReadString();
-                account = new AccountDTO(iban, owner, balance, bonus, type);
+                account = new AccountDTO(iban, owner, balance, bonus, (AccountDTO.AccountType)Enum.Parse(typeof(AccountDTO.AccountType), type));
             }
 
             return account;
@@ -139,9 +139,14 @@ namespace DAL.Binary
                     writer.Write(account.Owner);
                     writer.Write(account.Balance);
                     writer.Write(account.BonusPoints);
-                    writer.Write(account.AccountType);
+                    writer.Write(account.Type.ToString());
                 }
             }
+        }
+
+        public IEnumerable<AccountDTO> GetAllAccounts()
+        {
+            throw new NotImplementedException();
         }
     }
 }

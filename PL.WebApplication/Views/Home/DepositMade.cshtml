@@ -1,0 +1,10 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "DepositMade";
+}
+
+<h2>Deposit of @ViewBag.Amount.ToString("C") is made</h2>
+
+@Html.Partial("AccountInfo", Model)
+@Html.ActionLink("back to account list", "Deposit", "Home") <br />
+@Html.ActionLink("back to service", "Index", "Home")

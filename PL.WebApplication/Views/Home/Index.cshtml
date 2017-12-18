@@ -2,12 +2,12 @@
     ViewBag.Title = "Home Page";
 }
 
-<br />
-<ul>
-    <li>@Html.ActionLink("Make a deposit", "Index", "Deposit")</li>
-    <li>@Html.ActionLink("Make a withdrawal", "Index", "Withdraw")</li>
-    <li>@Html.ActionLink("Create new account", "Index", "Create")</li>
-    <li>@Html.ActionLink("Close an account", "Index", "Close")</li>
-    <br />
-    <li>@Html.ActionLink("View list of accounts", "ViewAccountList", "Home")</li>
+<h2>Account service options</h2>
+
+<ul >
+    <li>@Html.ActionLink("Make a deposit", "deposit", "home")</li>
+    <li>@Html.ActionLink("Make a withdrawal", "withdraw", "home")</li>
+    <li>@Html.ActionLink("Create a new account", "create", "home")</li>
+    <li>@Html.ActionLink("Close an account", "close", "home")</li>
+    <li>@Html.ActionLink("View a list of accounts", "AccountList", "Home")</li>
 </ul>

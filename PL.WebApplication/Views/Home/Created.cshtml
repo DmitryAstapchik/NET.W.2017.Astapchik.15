@@ -1,0 +1,11 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "Created";
+}
+
+<h2>New account is created</h2>
+
+@Html.Partial("AccountInfo", Model)
+@Html.ActionLink("view account list", "ViewAccountList", "Home")
+<br />
+@Html.ActionLink("back to service", "Index", "Home")
