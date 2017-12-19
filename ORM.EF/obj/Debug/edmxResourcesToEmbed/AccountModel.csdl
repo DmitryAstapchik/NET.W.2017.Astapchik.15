@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AccountModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AccountModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountSet" EntityType="AccountModel.Account" />
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="IBAN" />
+    </Key>
+    <Property Name="IBAN" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Owner" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" />
+    <Property Name="BonusPoints" Type="Single" Nullable="false" />
+    <Property Name="AccountType" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

@@ -1,13 +1,13 @@
 ﻿@model PL.WebApplication.Models.BankAccount
-@{
-    ViewBag.Title = "AccountInfo";
-}
 
-<h2>Account info</h2>
-
-@*@Html.DisplayForModel("BankAccount")*@
-
-IBAN: @Html.DisplayFor(Model => Model.IBAN)<br />
-Owner: @Html.DisplayFor(Model => Model.Owner)<br />
-Balance: @Html.DisplayFor(Model => Model.Balance)<br />
-Bonus points: @Html.DisplayFor(Model => Model.BonusPoints)<br />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        Account info
+    </div>
+    <div class="panel-body">
+        IBAN: @Html.DisplayFor(Model => Model.IBAN)<br />
+        Owner: @Html.DisplayFor(Model => Model.Owner)<br />
+        Balance: @Html.DisplayFor(Model => Model.Balance)<br />
+        Bonus points: @Html.DisplayFor(Model => Model.BonusPoints)<br />
+    </div>
+</div>

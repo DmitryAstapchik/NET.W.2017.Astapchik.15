@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Routing;
 using System.Web.Mvc;
 using BLL.Interface;
 using DependencyResolver;
@@ -32,26 +33,26 @@ namespace PL.WebApplication.Controllers
             return View(accounts);
         }
 
-        public ActionResult DepositTo(string iban)
+        public ActionResult DepositTo(Models.BankAccount account)
         {
-            var account = (Models.BankAccount)service.GetAllAccounts().Single(acc => acc.IBAN == iban);
             return View(account);
         }
 
         [HttpPost]
-        public ActionResult MakeDeposit(string iban, decimal amount)
+        public ActionResult MakeDeposit(Models.BankAccount account, decimal amount)
         {
-            service.MakeDeposit(iban, amount);
-            ViewBag.Amount = amount;
-            var account = service.GetAllAccounts().Single(acc => acc.IBAN == iban);
-            return RedirectToAction("DepositMade", new { iban = iban, amount = amount });
+            service.MakeDeposit(account.IBAN, amount);
+            var values = new RouteValueDictionary(account)
+            {
+                { "amount", amount }
+            };
+            return RedirectToAction("DepositMade", values);
         }
 
-        public ViewResult DepositMade(string iban, decimal amount)
+        public ViewResult DepositMade(Models.BankAccount account, decimal amount)
         {
-            var acc = (Models.BankAccount)service.GetAllAccounts().Single(a => a.IBAN == iban);
             ViewBag.Amount = amount;
-            return View(acc);
+            return View(account);
         }
 
         public ActionResult Withdraw()
@@ -60,26 +61,25 @@ namespace PL.WebApplication.Controllers
             return View(accounts);
         }
 
-        [HttpPost]
-        public ViewResult WithdrawFrom(string iban)
+        public ViewResult WithdrawFrom(Models.BankAccount account)
         {
-            var account = service.GetAllAccounts().Single(acc => acc.IBAN == iban);
-            return View((Models.BankAccount)account);
+            return View(account);
         }
 
         [HttpPost]
-        public RedirectToRouteResult MakeWithdrawal(string iban, decimal amount)
+        public RedirectToRouteResult MakeWithdrawal(Models.BankAccount account, decimal amount)
         {
-            service.MakeWithdrawal(iban, amount);
+            service.MakeWithdrawal(account.IBAN, amount);
             ViewBag.Amount = amount;
-            var account = service.GetAllAccounts().Single(acc => acc.IBAN == iban);
-            TempData["amount"] = amount;
-            return RedirectToAction("WithdrawalMade", (Models.BankAccount)account);
+            var values = new RouteValueDictionary(account)
+            {
+                { "amount" , amount }
+            };
+            return RedirectToAction("WithdrawalMade", values);
         }
 
-        public ViewResult WithdrawalMade(Models.BankAccount account, decimal? amount)
+        public ViewResult WithdrawalMade(Models.BankAccount account, decimal amount)
         {
-            amount = (decimal)TempData["amount"];
             ViewBag.Amount = amount;
             return View(account);
         }
@@ -92,9 +92,9 @@ namespace PL.WebApplication.Controllers
 
         [ActionName("create")]
         [HttpPost]
-        public RedirectToRouteResult CreateAccount(string owner, string balance)
+        public RedirectToRouteResult CreateAccount(string owner, decimal balance)
         {
-            var iban = service.OpenAccount(owner, decimal.Parse(balance));
+            var iban = service.OpenAccount(owner, balance);
             var account = service.GetAllAccounts().Single(acc => acc.IBAN == iban);
             return RedirectToAction("Created", account);
         }

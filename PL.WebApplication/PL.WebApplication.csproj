@@ -201,6 +201,9 @@
     <Content Include="Views\Home\Closed.cshtml" />
     <Content Include="Views\Home\Created.cshtml" />
     <Content Include="Views\Home\AccountList.cshtml" />
+    <Content Include="Views\Shared\Modal.cshtml" />
+    <Content Include="Views\Shared\CreateModal.cshtml" />
+    <Content Include="Views\Shared\Done.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

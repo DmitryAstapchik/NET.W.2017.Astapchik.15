@@ -1,0 +1,9 @@
+﻿@model PL.WebApplication.Models.BankAccount
+
+<h3 class=" alert alert-success">@ViewBag.Message</h3>
+
+@Html.Partial("AccountInfo", Model)
+@Html.ActionLink((string)ViewBag.LinkText, (string)ViewBag.Action, "home", null, new { @class = "btn btn-default" })
+<br />
+<br />
+@Html.ActionLink("back to service", "Index", "home", null, new { @class = "btn btn-default" })

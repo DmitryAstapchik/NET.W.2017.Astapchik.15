@@ -3,9 +3,9 @@
     ViewBag.Title = "Created";
 }
 
-<h2>New account is created</h2>
-
-@Html.Partial("AccountInfo", Model)
-@Html.ActionLink("view account list", "ViewAccountList", "Home")
-<br />
-@Html.ActionLink("back to service", "Index", "Home")
+@{
+    ViewBag.Message = "A new account is created";
+    ViewBag.Action = "AccountList";
+    ViewBag.LinkText = "view account list";
+}
+@Html.Partial("Done", Model)

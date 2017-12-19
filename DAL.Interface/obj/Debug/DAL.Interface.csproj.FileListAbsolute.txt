@@ -9,3 +9,10 @@ E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days
 E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Interface\obj\Debug\DAL.Interface.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Interface\obj\Debug\DAL.Interface.dll
 E:\studying\programming\EPAM training\Tasks\Days 14-15-20171121T160923Z-001\Days 14-15\AccountSystemDemo\AccountSystemDemo\DAL.Interface\obj\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\bin\Debug\DAL.Interface.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.pdb
