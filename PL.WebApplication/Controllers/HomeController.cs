@@ -91,6 +91,38 @@ namespace PL.WebApplication.Controllers
             return View(account);
         }
 
+        [HttpGet]
+        public ActionResult Transfer()
+        {
+            var accounts = service.GetAllAccounts().Select(a => (Models.BankAccount)a);
+            return View(accounts);
+        }
+
+        [ActionName("transfer")]
+        [HttpPost]
+        public ActionResult Transfer(string from, string to)
+        {
+            var acc1 = service.GetAllAccounts().Single(a => a.IBAN == from);
+            var acc2 = service.GetAllAccounts().Single(a => a.IBAN == to);
+            return View("TransferBetween", new[] { (Models.BankAccount)acc1, (Models.BankAccount)acc2 });
+        }
+
+        [HttpPost]
+        public ActionResult MakeTransfer(string from, string to, decimal amount)
+        {
+            service.MakeWithdrawal(from, amount);
+            service.MakeDeposit(to, amount);
+            var acc = service.GetAllAccounts().Single(a => a.IBAN == to);
+            var values = new RouteValueDictionary(acc) { { "amount", amount } };
+            return RedirectToAction("TransferMade", values);
+        }
+
+        public ViewResult TransferMade(Models.BankAccount to, decimal amount)
+        {
+            ViewBag.Amount = amount;
+            return View(to);
+        }
+
         [ActionName("create")]
         public ActionResult CreateAccount()
         {

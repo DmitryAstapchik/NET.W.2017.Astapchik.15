@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+
+@{
+    ViewBag.Title = "TransferBetween";
+}
+
+<h2 class="page-header">Transfer between accounts</h2>
+
+@Html.Label("Transfer from")
+@Html.Partial("AccountInfo", Model.ElementAt(0))
+@Html.Label("Transfer to")
+@Html.Partial("AccountInfo", Model.ElementAt(1))
+
+@using (Html.BeginForm("MakeTransfer", "home", new { from = $"{Model.ElementAt(0).IBAN}", to = $"{Model.ElementAt(1).IBAN}" }, FormMethod.Post, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+        @Html.Label("Transfer amount:")
+        <input type="number" class="form-control" name="amount" />
+        <button class="btn btn-primary">Transfer</button>
+    </div>
+}

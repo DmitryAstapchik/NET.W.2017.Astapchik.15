@@ -1,0 +1,11 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "TransferMade";
+}
+
+@{
+    ViewBag.Message = $"Transfer of {ViewBag.Amount.ToString("C")} is made";
+    ViewBag.Action = "transfer";
+    ViewBag.LinkText = "back to transfer page";
+}
+@Html.Partial("done", Model)

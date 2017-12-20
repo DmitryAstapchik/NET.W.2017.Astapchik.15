@@ -204,6 +204,10 @@
     <Content Include="Views\Shared\Modal.cshtml" />
     <Content Include="Views\Shared\CreateModal.cshtml" />
     <Content Include="Views\Shared\Done.cshtml" />
+    <Content Include="Views\Home\Transfer.cshtml" />
+    <Content Include="Views\Home\TransferBetween.cshtml" />
+    <Content Include="Views\Shared\TransferModal.cshtml" />
+    <Content Include="Views\Home\TransferMade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
