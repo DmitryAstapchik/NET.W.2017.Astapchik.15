@@ -4,8 +4,5 @@
 }
 
 <h2 class="page-header ">Make a withdrawal</h2>
-@{
-    ViewData["action"] = "WithdrawFrom";
-    ViewData["command"] = "Withdraw";
-}
-@Html.Partial("SelectAccount", Model, ViewData)
+
+@Html.Partial("SelectAccount", Model)

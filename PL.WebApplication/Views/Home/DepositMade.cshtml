@@ -3,10 +3,9 @@
     ViewBag.Title = "DepositMade";
 }
 
-<h2 class="alert alert-success">Deposit of @ViewBag.Amount.ToString("C") is made</h2>
-
-@Html.Partial("AccountInfo", Model)
-@Html.ActionLink("back to account list", "Deposit", "Home", null, new { @class = "btn btn-default" }) 
-<br />
-<br />
-@Html.ActionLink("back to service", "Index", "Home", null, new { @class = "btn btn-default" })
+@{
+    ViewBag.Message = $"Deposit of {ViewBag.Amount.ToString("C")} is made";
+    ViewBag.Action = "deposit";
+    ViewBag.LinkText = "back to account list";
+}
+@Html.Partial("Done", Model)

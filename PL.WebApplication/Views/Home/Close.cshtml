@@ -5,8 +5,4 @@
 
 <h2 class="page-header">Close an account</h2>
 
-@{ 
-    ViewData["action"] = "close";
-    ViewData["command"] = "Close";
-}
-@Html.Partial("SelectAccount", Model, ViewData)
+@Html.Partial("SelectAccount", Model)

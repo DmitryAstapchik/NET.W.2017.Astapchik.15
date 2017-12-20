@@ -3,9 +3,16 @@
     ViewBag.Title = "WithdrawalMade";
 }
 
-<h2 class="alert alert-success">Withdrawal of @ViewBag.Amount.ToString("C") is made</h2>
+@*<h2 class="alert alert-success">Withdrawal of @ViewBag.Amount.ToString("C") is made</h2>
 
 @Html.Partial("AccountInfo", Model)
 @Html.ActionLink("back to account list", "Withdraw", null, new { @class = "btn btn-link" })
 <br />
-@Html.ActionLink("back to service", "Index", null, new { @class = "btn btn-link" })
+@Html.ActionLink("back to service", "Index", null, new { @class = "btn btn-link" })*@
+
+@{
+    ViewBag.Message = $"Withdrawal of {ViewBag.Amount.ToString("C")} is made";
+    ViewBag.Action = "withdraw";
+    ViewBag.LinkText = "back to account list";
+}
+@Html.Partial("Done", Model)

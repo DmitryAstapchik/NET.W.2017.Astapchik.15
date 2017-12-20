@@ -7,10 +7,11 @@
 <h2>Select an account</h2>
 <table class="table table-bordered table-hover table-condensed">
     <thead bgcolor="lightgrey">
-        <tr >
+        <tr>
             <th class="text-center">IBAN</th>
             <th class="text-center">Owner</th>
             <th class="text-center">Balance</th>
+            <th class="text-center">Bonus points</th>
             <th class="text-center">Account type</th>
         </tr>
     </thead>
@@ -21,18 +22,20 @@
                 <td>@acc.IBAN</td>
                 <td>@acc.Owner</td>
                 <td>@acc.Balance</td>
+                <td>@acc.BonusPoints</td>
                 <td>@acc.AccountType</td>
                 <td>
-                    @using (Html.BeginForm((string)ViewData["action"], "home", acc))
+                    @using (Html.BeginForm(acc))
                     {
-                        if (ViewData["action"].ToString() == "close")
+                        if (ViewContext.RouteData.Values["action"].ToString() == "close")
                         {
-                            <button class="btn btn-primary btn-block " data-toggle="modal" data-target="#myModal">@((string)ViewData["command"])</button>
+                            <button class="btn btn-primary btn-block " data-toggle="modal" data-target="#myModal">Close</button>
+                            { ViewBag.Message = "Close this account?"; }
                             @Html.Partial("Modal", acc)
                         }
                         else
                         {
-                            <button class="btn btn-primary btn-block ">@((string)ViewData["command"])</button>
+                            <button class="btn btn-primary btn-block text" style="text-transform:capitalize">@ViewContext.RouteData.Values["action"]</button>
                         }
                     }
                 </td>
@@ -41,4 +44,3 @@
     </tbody>
 </table>
 @Html.ActionLink("back to account service", "Index", null, new { @class = "btn btn-default" })
-

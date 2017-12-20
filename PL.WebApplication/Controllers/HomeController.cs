@@ -33,15 +33,18 @@ namespace PL.WebApplication.Controllers
             return View(accounts);
         }
 
+        [ActionName("deposit")]
+        [HttpPost]
         public ActionResult DepositTo(Models.BankAccount account)
         {
-            return View(account);
+            return View("DepositTo", account);
         }
 
         [HttpPost]
         public ActionResult MakeDeposit(Models.BankAccount account, decimal amount)
         {
-            service.MakeDeposit(account.IBAN, amount);
+            var newBalance = service.MakeDeposit(account.IBAN, amount);
+            account.Balance = newBalance;
             var values = new RouteValueDictionary(account)
             {
                 { "amount", amount }
@@ -55,22 +58,26 @@ namespace PL.WebApplication.Controllers
             return View(account);
         }
 
+        [HttpGet]
         public ActionResult Withdraw()
         {
             var accounts = service.GetAllAccounts().Select(a => (Models.BankAccount)a);
             return View(accounts);
         }
 
+        [ActionName("withdraw")]
+        [HttpPost]
         public ViewResult WithdrawFrom(Models.BankAccount account)
         {
-            return View(account);
+            return View("WithdrawFrom", account);
         }
 
         [HttpPost]
         public RedirectToRouteResult MakeWithdrawal(Models.BankAccount account, decimal amount)
         {
-            service.MakeWithdrawal(account.IBAN, amount);
+            var newBalance = service.MakeWithdrawal(account.IBAN, amount);
             ViewBag.Amount = amount;
+            account.Balance = newBalance;
             var values = new RouteValueDictionary(account)
             {
                 { "amount" , amount }
@@ -96,7 +103,7 @@ namespace PL.WebApplication.Controllers
         {
             var iban = service.OpenAccount(owner, balance);
             var account = service.GetAllAccounts().Single(acc => acc.IBAN == iban);
-            return RedirectToAction("Created", account);
+            return RedirectToAction("Created", (Models.BankAccount)account);
         }
 
         public ViewResult Created(Models.BankAccount account)

@@ -4,8 +4,5 @@
 }
 
 <h2 class="page-header">Make a deposit</h2>
-@{
-    ViewData["action"] = "DepositTo";
-    ViewData["command"] = "Deposit";
-}
-@Html.Partial("SelectAccount", Model, ViewData)
+
+@Html.Partial("SelectAccount", Model)

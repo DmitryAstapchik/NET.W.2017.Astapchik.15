@@ -3,17 +3,20 @@
     ViewBag.Title = "WithdrawFrom";
 }
 
-
 <h2 class="page-header">Withdraw from account</h2>
+
 @Html.Partial("AccountInfo", Model)
-@using (Html.BeginForm("MakeWithdrawal", "home", Model, FormMethod.Post, new { @class = "form-inline" }))
+
+@using (Html.BeginForm("MakeWithdrawal", "Home", Model, FormMethod.Post, new { @class = "form-inline" }))
 {
-    @*<h2>Make a withdrawal</h2>*@
+    <h2>Make a withdrawal</h2>
     <div class="form-group">
         <label for="amount">Withdrawal amount:</label>
-        <input name="amount" class="form-control" id="amount" type="number" />
+        <input name="amount" id="amount" class="form-control"  type="number" />
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Withdraw</button>
     </div>
-        <button type="submit" class="btn btn-default">Withdraw</button>
-        @*<input type="hidden" name="iban" value="@Model.IBAN" />*@
+    {
+        ViewBag.Message = "Withdraw from this account?";
+    }
+    @Html.Partial("Modal", Model)
 }
-
