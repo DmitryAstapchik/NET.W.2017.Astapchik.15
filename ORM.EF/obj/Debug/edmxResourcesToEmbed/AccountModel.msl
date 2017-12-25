@@ -9,6 +9,16 @@
           <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="BonusPoints" ColumnName="BonusPoints" />
           <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AccountModel.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -19,7 +19,7 @@ namespace BLL.Interface
         /// <returns>bonus points</returns>
         public float CalculateDepositBonus(BankAccount account, decimal depositAmount)
         {
-            return (float)depositAmount / BankAccount.EFFECTIVEAMOUNT * (account.BalanceValue + account.DepositValue);
+            return (float)depositAmount / BankAccount.EffectiveAmount * (account.BalanceValue + account.DepositValue);
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace BLL.Interface
         /// <returns>bonus points</returns>
         public float CalculateWithdrawalBonus(BankAccount account, decimal withdrawalAmount)
         {
-            return (float)withdrawalAmount / BankAccount.EFFECTIVEAMOUNT * account.BalanceValue;
+            return (float)withdrawalAmount / BankAccount.EffectiveAmount * account.BalanceValue;
         }
     }
 }

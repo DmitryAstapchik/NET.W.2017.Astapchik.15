@@ -9,34 +9,20 @@ namespace BLL.Interface
     {
         #region fields
         /// <summary>
-        /// International Bank Account Number of an account.
-        /// </summary>
-        public string IBAN { get; private set; }
-
-        /// <summary>
-        /// Owner of an account.
-        /// </summary>
-        public string Owner { get; private set; }
-
-        /// <summary>
         /// an amount of money that considers effective for a bank
         /// </summary>
-        internal const ushort EFFECTIVEAMOUNT = 10000;
+        internal const ushort EffectiveAmount = 10000;
 
         /// <summary>
         /// maximum possible bonus points
         /// </summary>
-        private const ushort MAXPOINTS = 100;
-
-        /// <summary>
-        /// Balance of an account.
-        /// </summary>
-        private decimal balance;
+        private const ushort MaxBonusPoints = 100;
 
         /// <summary>
         /// Bonus points of an account.
         /// </summary>
         private float bonusPoints;
+
         #endregion
 
         #region constructors
@@ -59,9 +45,9 @@ namespace BLL.Interface
                 throw new ArgumentException("String is not significant.", "owner");
             }
 
-            if (bonusPoints < 0 || bonusPoints > MAXPOINTS)
+            if (bonusPoints < 0 || bonusPoints > MaxBonusPoints)
             {
-                throw new ArgumentOutOfRangeException("bonusPoints", $"Bonus points range is from 0 to {MAXPOINTS}.");
+                throw new ArgumentOutOfRangeException("bonusPoints", $"Bonus points range is from 0 to {MaxBonusPoints}.");
             }
 
             this.IBAN = iban;
@@ -73,9 +59,19 @@ namespace BLL.Interface
 
         #region properties
         /// <summary>
+        /// International Bank Account Number of an account.
+        /// </summary>
+        public string IBAN { get; private set; }
+
+        /// <summary>
+        /// Owner of an account.
+        /// </summary>
+        public string Owner { get; private set; }
+
+        /// <summary>
         /// Gets an account balance.
         /// </summary>
-        public decimal Balance { get => balance; set => balance = value; }
+        public decimal Balance { get; private set; }
 
         /// <summary>
         /// Gets publicly and sets privately account bonus points using calculation.
@@ -83,18 +79,21 @@ namespace BLL.Interface
         public float BonusPoints
         {
             get => (float)Math.Round(bonusPoints, 2);
-            set => bonusPoints = value < 0 ? 0 : value > MAXPOINTS ? MAXPOINTS : value;
+            set => bonusPoints = value < 0 ? 0 : value > MaxBonusPoints ? MaxBonusPoints : value;
         }
 
         /// <summary>
         /// 'value' of a balance
         /// </summary>
-        protected internal byte BalanceValue { get; protected set; }
+        protected internal  byte BalanceValue { get; protected set; }
 
         /// <summary>
         /// 'value' of a deposit
         /// </summary>
-        protected internal byte DepositValue { get; protected set; }
+        protected internal  byte DepositValue { get; protected set; }
+
+        //public IBonusPointsCalculator Calculator { get; set; }
+
         #endregion
 
         #region methods
@@ -105,6 +104,35 @@ namespace BLL.Interface
         public override string ToString()
         {
             return string.Join(Environment.NewLine, $"IBAN: {IBAN}", $"Owner: {Owner}", $"Balance: {Balance.ToString("C")}", $"Bonus points: {BonusPoints}");
+        }
+
+        public decimal Deposit(decimal amount)
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentException("deposit amount should be greater than zero");
+            }
+
+            Balance += amount;
+            //BonusPoints += Calculator.CalculateDepositBonus(this, amount);
+            return Balance;
+        }
+
+       public decimal Withdraw(decimal amount)
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentException("withdraw amount should be greater than zero");
+            }
+
+            if (Balance < amount)
+            {
+                throw new ArgumentException("balance is lesser than withdrawal amount");
+            }
+
+            Balance -= amount;
+            //BonusPoints -= Calculator.CalculateWithdrawalBonus(this, amount);
+            return Balance;
         }
         #endregion
     }

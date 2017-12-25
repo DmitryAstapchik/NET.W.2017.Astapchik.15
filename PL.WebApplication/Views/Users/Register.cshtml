@@ -1,0 +1,14 @@
+﻿@model PL.WebApplication.Models.RegistrationData
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+    <button type="submit">Register</button>
+} 

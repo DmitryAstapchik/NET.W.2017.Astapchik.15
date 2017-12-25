@@ -38,6 +38,6 @@ namespace BLL.Interface
         /// <returns>new account balance</returns>
         decimal MakeWithdrawal(string iban, decimal amount);
 
-        IEnumerable<BankAccount> GetAllAccounts();
+        IEnumerable<BankAccount> GetUserAccounts(string email);
     }
 }

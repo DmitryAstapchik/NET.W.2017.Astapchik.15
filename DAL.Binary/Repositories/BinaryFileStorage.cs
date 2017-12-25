@@ -36,7 +36,7 @@ namespace DAL.Binary
         /// appends an account info to a file
         /// </summary>
         /// <param name="account">account to add</param>
-        public void Create(AccountDTO account)
+        public void Create(BankAccountDTO account)
         {
             var stream = new FileStream(path, FileMode.Append);
             using (var writer = new BinaryWriter(stream))
@@ -54,9 +54,9 @@ namespace DAL.Binary
         /// </summary>
         /// <param name="iban">IBAN to find</param>
         /// <returns>account with specified <paramref name="iban"/></returns>
-        public AccountDTO GetByIban(string iban)
+        public BankAccountDTO GetByIban(string iban)
         {
-            AccountDTO account;
+            BankAccountDTO account;
 
             var stream = new FileStream(path, FileMode.Open);
 
@@ -74,7 +74,7 @@ namespace DAL.Binary
                 var balance = reader.ReadDecimal();
                 var bonus = reader.ReadSingle();
                 var type = reader.ReadString();
-                account = new AccountDTO(iban, owner, balance, bonus, (AccountDTO.AccountType)Enum.Parse(typeof(AccountDTO.AccountType), type));
+                account = new BankAccountDTO(iban, owner, balance, bonus, (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), type));
             }
 
             return account;
@@ -85,7 +85,7 @@ namespace DAL.Binary
         /// </summary>
         /// <param name="iban">IBAN of an account to remove</param>
         /// <returns>account balance</returns>
-        public void Delete(AccountDTO account)
+        public void Delete(BankAccountDTO account)
         {
             var stream = new FileStream(path, FileMode.Open);
 
@@ -121,7 +121,7 @@ namespace DAL.Binary
         /// renew an account info
         /// </summary>
         /// <param name="account">account to renew</param>
-        public void Update(AccountDTO account)
+        public void Update(BankAccountDTO account)
         {
             var stream = new FileStream(path, FileMode.Open);
             using (var reader = new BinaryReader(stream))
@@ -144,7 +144,12 @@ namespace DAL.Binary
             }
         }
 
-        public IEnumerable<AccountDTO> GetAllAccounts()
+        public IEnumerable<BankAccountDTO> GetAllAccounts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<BankAccountDTO> GetUserAccounts(string email)
         {
             throw new NotImplementedException();
         }

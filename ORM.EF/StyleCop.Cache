@@ -3,6 +3,9 @@
   <project key="-1950681246">
     <configuration>DEBUG;TRACE</configuration>
   </project>
+  <project key="-233701512">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
   <sourcecode name="AccountModel.Designer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2017.11.12 16:18:54.667</styleCop>
@@ -30,7 +33,7 @@
     <timestamps>
       <styleCop>2017.11.12 16:18:54.667</styleCop>
       <settingsFile>2017.11.12 16:18:54.525</settingsFile>
-      <sourceFile>2017.12.13 16:59:20.041</sourceFile>
+      <sourceFile>2017.12.13 16:59:21.576</sourceFile>
       <parser>2017.11.12 16:18:54.667</parser>
       <StyleCop.CSharp.DocumentationRules>2017.11.12 16:18:54.667</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>1579365089</StyleCop.CSharp.DocumentationRules.FilesHashCode>

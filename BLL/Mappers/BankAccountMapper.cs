@@ -19,9 +19,9 @@ namespace BLL
         /// </summary>
         /// <param name="dto">bank account DTO</param>
         /// <returns>bank account instance</returns>
-        public static BankAccount FromDTO(this AccountDTO dto)
+        public static BankAccount FromDTO(this BankAccountDTO dto)
         {
-            return (BankAccount)Assembly.GetAssembly(typeof(BankAccount)).GetType("BLL.Interface." + dto.Type.ToString()).GetConstructors(BindingFlags.Instance | BindingFlags.Public)[0].Invoke(new object[] { dto.IBAN, dto.Owner, dto.Balance, dto.BonusPoints });
+            return (BankAccount)Activator.CreateInstance(Assembly.GetAssembly(typeof(BankAccount)).GetType("BLL.Interface." + dto.Type.ToString()), new object[] { dto.IBAN, dto.Owner, dto.Balance, dto.BonusPoints });
         }
 
         /// <summary>
@@ -29,9 +29,9 @@ namespace BLL
         /// </summary>
         /// <param name="account">bank account to project</param>
         /// <returns>DTO instance</returns>
-        public static AccountDTO ToDTO(this BankAccount account)
+        public static BankAccountDTO ToDTO(this BankAccount account)
         {
-            return new AccountDTO(account.IBAN, account.Owner, account.Balance, account.BonusPoints, (AccountDTO.AccountType)Enum.Parse(typeof(AccountDTO.AccountType), account.GetType().Name));
+            return new BankAccountDTO(account.IBAN, account.Owner, account.Balance, account.BonusPoints, (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), account.GetType().Name));
         }
     }
 }

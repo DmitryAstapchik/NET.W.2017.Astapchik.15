@@ -13,13 +13,13 @@ namespace BLL.Tests
     [TestFixture]
     public class BankAccountMapperTests
     {
-        private static IEnumerable<AccountDTO> FromDTOTestCases
+        private static IEnumerable<BankAccountDTO> FromDTOTestCases
         {
             get
             {
-                yield return new AccountDTO("123", "owner1", 120m, 2.33f, typeof(StandardAccount).FullName);
-                yield return new AccountDTO("456", "owner2", 5000m, 5.44f, typeof(GoldAccount).FullName);
-                yield return new AccountDTO("789", "owner3", 10001m, 3.11f, typeof(PlatinumAccount).FullName);
+                yield return new BankAccountDTO("123", "owner1", 120m, 2.33f, BankAccountDTO.AccountType.StandardAccount);
+                yield return new BankAccountDTO("456", "owner2", 5000m, 5.44f, BankAccountDTO.AccountType.GoldAccount);
+                yield return new BankAccountDTO("789", "owner3", 10001m, 3.11f, BankAccountDTO.AccountType.PlatinumAccount);
             }
         }
 
@@ -34,17 +34,17 @@ namespace BLL.Tests
         }
 
         [TestCaseSource("FromDTOTestCases")]
-        public void FromDTOTest(AccountDTO dto)
+        public void FromDTOTest(BankAccountDTO dto)
         {
             var account = BankAccountMapper.FromDTO(dto);
-            Assert.That(account.IBAN == dto.IBAN && account.Owner == dto.Owner && account.Balance == dto.Balance && account.BonusPoints == dto.BonusPoints && account.GetType().FullName == dto.Type);
+            Assert.That(account.IBAN == dto.IBAN && account.Owner == dto.Owner && account.Balance == dto.Balance && account.BonusPoints == dto.BonusPoints && account.GetType().Name == dto.Type.ToString());
         }
 
         [TestCaseSource("ToDTOTestCases")]
         public void ToDTOTest(BankAccount account)
         {
             var dto = BankAccountMapper.ToDTO(account);
-            Assert.That(dto.IBAN == account.IBAN && dto.Owner == account.Owner  && dto.Balance == account.Balance && dto.BonusPoints == account.BonusPoints && dto.Type == account.GetType().FullName);
+            Assert.That(dto.IBAN == account.IBAN && dto.Owner == account.Owner  && dto.Balance == account.Balance && dto.BonusPoints == account.BonusPoints && dto.Type.ToString() == account.GetType().Name);
         }
     }
 }

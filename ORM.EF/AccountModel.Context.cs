@@ -26,5 +26,6 @@ namespace ORM.EF
         }
     
         public virtual DbSet<Account> AccountSet { get; set; }
+        public virtual DbSet<User> UserSet { get; set; }
     }
 }

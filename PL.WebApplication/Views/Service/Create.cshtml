@@ -1,0 +1,45 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="page-header">Create a new account</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @*<label for="owner">Owner:</label>
+            <input type="text" id="owner" name="owner" class="form-control" />*@
+
+        @*@Html.LabelFor(m => m.Type)
+            @Html.EditorFor(m => m.Type, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.Type)*@
+
+        @Html.LabelFor(m => m.Type)
+        @Html.EnumDropDownListFor(m => m.Type, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Type)
+    </div>
+    <div class="form-group">
+        @*<label for="balance">Start balance:</label>
+            <input type="number" id="balance" name="startbalance" class="form-control"/>*@
+        @Html.LabelFor(m => m.Balance)
+        @Html.EditorFor(m => m.Balance, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(m => m.Balance)
+    </div>
+    @*<button type="submit" class="btn btn-primary form-control">Create</button>*@
+    <input type="submit" class="btn btn-primary form-control" value="Create" />
+    @*<input type="button" class="btn btn-primary form-control" value="Create" data-toggle="modal" data-target="#myModal"/>
+        {
+            ViewBag.Message = "Create a new account?";
+        }
+        @Html.Partial("CreateModal", Model)*@
+}
+
+<br />
+@Html.Partial("_HomeLink")
+
+@section scripts
+    {
+    @Scripts.Render("~/bundles/jqueryval")
+}

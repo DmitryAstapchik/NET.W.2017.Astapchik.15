@@ -15,39 +15,39 @@ namespace BLL
         /// <summary>
         /// Minimum amount of deposit.
         /// </summary>
-        private const ushort MINDEPOSIT = 50;
+        private const ushort MinDeposit = 50;
 
         /// <summary>
         /// Minimum amount of withdrawal.
         /// </summary>
-        private const ushort MINWITHDRAWAL = 10;
-
-        /// <summary>
-        /// Creates a new bank instance with specified storage, IBAN generator and bonus points calculator
-        /// </summary>
-        /// <param name="storage">bank accounts storage</param>
-        /// <param name="generator">IBAN generator</param>
-        public Bank(IAccountRepository storage, IIBANGenerator ibanGenerator, IBonusPointsCalculator calculator)
-        {
-            this.Repository = storage;
-            this.IBANGenerator = ibanGenerator;
-            this.BonusCalculator = calculator;
-        }
+        private const ushort MinWithdrawal = 10;
 
         /// <summary>
         /// bonus points calculator
         /// </summary>
-        public IBonusPointsCalculator BonusCalculator { get; set; }
+        private IBonusPointsCalculator bonusCalculator;
 
         /// <summary>
         /// Bank's IBAN generator
         /// </summary>
-        public IIBANGenerator IBANGenerator { get; set; }
+        private IIBANGenerator ibanGenerator;
 
         /// <summary>
         /// bank accounts storage
         /// </summary>
-        public IAccountRepository Repository { get; set; }
+        private IAccountRepository repository;
+
+        /// <summary>
+        /// Creates a new bank instance with specified storage, IBAN generator and bonus points calculator
+        /// </summary>
+        /// <param name="repository">bank accounts storage</param>
+        /// <param name="generator">IBAN generator</param>
+        public Bank(IAccountRepository repository, IIBANGenerator ibanGenerator, IBonusPointsCalculator calculator)
+        {
+            this.repository = repository;
+            this.ibanGenerator = ibanGenerator;
+            this.bonusCalculator = calculator;
+        }
 
         /// <summary>
         /// Removes an account with specified <paramref name="iban"/> from accounts file
@@ -61,16 +61,16 @@ namespace BLL
                 throw new ArgumentException("No IBAN is given.", "IBAN");
             }
 
-            var acc = Repository.GetByIban(iban);
-            Repository.Delete(acc);
+            var acc = repository.GetByIban(iban);
+            repository.Delete(acc);
             return acc.Balance;
         }
 
-        public IEnumerable<BankAccount> GetAllAccounts()
+        public IEnumerable<BankAccount> GetUserAccounts(string email)
         {
-            foreach (var item in this.Repository.GetAllAccounts())
+            foreach (var account in this.repository.GetUserAccounts(email))
             {
-                yield return item.FromDTO();
+                yield return account.FromDTO();
             }
         }
 
@@ -85,18 +85,18 @@ namespace BLL
         {
             if (string.IsNullOrWhiteSpace(iban))
             {
-                throw new ArgumentException("No IBAN is given.", "IBAN");
+                throw new ArgumentException("No IBAN is given.", "iban");
             }
 
-            if (amount < MINDEPOSIT)
+            if (amount < MinDeposit)
             {
-                throw new ArgumentException("Minimum deposit amount is " + MINDEPOSIT.ToString("C"));
+                throw new ArgumentException("Minimum deposit amount is " + MinDeposit.ToString("C"));
             }
 
-            var account = BankAccountMapper.FromDTO(Repository.GetByIban(iban));
-            account.Balance += amount;
-            account.BonusPoints += BonusCalculator.CalculateDepositBonus(account, amount);
-            Repository.Update(BankAccountMapper.ToDTO(account));
+            var account = repository.GetByIban(iban).FromDTO();
+            account.Deposit(amount);
+            account.BonusPoints += bonusCalculator.CalculateDepositBonus(account, amount);
+            repository.Update(account.ToDTO());
 
             return account.Balance;
         }
@@ -115,21 +115,21 @@ namespace BLL
                 throw new ArgumentException("No IBAN is given.", "IBAN");
             }
 
-            if (amount < MINWITHDRAWAL)
+            if (amount < MinWithdrawal)
             {
-                throw new ArgumentException("Minimum withdrawal amount is " + MINWITHDRAWAL.ToString("C"));
+                throw new ArgumentException("Minimum withdrawal amount is " + MinWithdrawal.ToString("C"));
             }
 
-            var account = BankAccountMapper.FromDTO(Repository.GetByIban(iban));
+            var account = BankAccountMapper.FromDTO(repository.GetByIban(iban));
 
             if (amount > account.Balance)
             {
-                throw new InvalidOperationException("account balance is less than withdrawal amount");
+                throw new InvalidOperationException("account balance is lesser than withdrawal amount");
             }
 
-            account.Balance -= amount;
-            account.BonusPoints -= BonusCalculator.CalculateWithdrawalBonus(account, amount);
-            Repository.Update(BankAccountMapper.ToDTO(account));
+            account.Withdraw(amount);
+            account.BonusPoints -= bonusCalculator.CalculateWithdrawalBonus(account, amount);
+            repository.Update(account.ToDTO());
 
             return account.Balance;
         }
@@ -148,26 +148,26 @@ namespace BLL
                 throw new ArgumentException("No significant characters are given.", "holder");
             }
 
-            if (startBalance < MINDEPOSIT)
-            {
-                throw new ArgumentException($"Cannot create a bank account with balance lesser than {MINDEPOSIT}");
-            }
+            //if (startBalance < MinDeposit)
+            //{
+            //    throw new ArgumentException($"Cannot create a bank account with balance lesser than {MinDeposit}");
+            //}
 
             BankAccount account;
-            if (startBalance <= 1000)
+            if (startBalance < 1000)
             {
-                account = new StandardAccount(IBANGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 0);
+                account = new StandardAccount(ibanGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 0);
             }
-            else if (startBalance <= 10000)
+            else if (startBalance < 10000)
             {
-                account = new GoldAccount(IBANGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 5);
+                account = new GoldAccount(ibanGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 5);
             }
             else
             {
-                account = new PlatinumAccount(IBANGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 10);
+                account = new PlatinumAccount(ibanGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 10);
             }
 
-            Repository.Create(BankAccountMapper.ToDTO(account));
+            repository.Create(account.ToDTO());
 
             return account.IBAN;
         }

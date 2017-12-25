@@ -1,0 +1,20 @@
+﻿@model PL.WebApplication.Models.BankAccount
+
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        @Html.Label("Account info")
+    </div>
+    <div class="panel-body">
+        @Html.Label("IBAN:")
+        @Html.DisplayFor(m => m.IBAN)<br />
+        @Html.Label("Owner:")
+        @Html.DisplayFor(m => m.Owner)<br />
+        @Html.Label("Balance:")
+        @Html.DisplayFor(m => m.Balance)<br />
+        @Html.Label("Bonus points:")
+        @Html.DisplayFor(m => m.BonusPoints)<br />
+        @Html.Label("Account type:")
+        @Html.DisplayFor(m => m.Type)
+    </div>
+</div>

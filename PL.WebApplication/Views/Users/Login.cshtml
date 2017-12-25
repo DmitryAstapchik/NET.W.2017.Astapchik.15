@@ -1,0 +1,15 @@
+﻿@model PL.WebApplication.Models.LoginData
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2 class="page-header">Login</h2>
+
+@using (Html.BeginForm((object)ViewBag.ReturnUrl))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <button type="submit">Login</button>
+}

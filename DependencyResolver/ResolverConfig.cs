@@ -13,11 +13,12 @@ namespace DependencyResolver
         public static void ConfigurateResolver(this IKernel kernel)
         {
             kernel.Bind<IBonusPointsCalculator>().To<BonusCalculator>();
+            kernel.Bind<IIBANGenerator>().To<IBANGenerator>().InSingletonScope();
 
             // kernel.Bind<IAccountStorage>().To<BinaryFileStorage>().WithConstructorArgument("test.bin");
-             kernel.Bind<IAccountRepository>().To<ListStorage>();
-            //kernel.Bind<IAccountRepository>().To<DBStorage>();
-            kernel.Bind<IIBANGenerator>().To<IBANGenerator>().InSingletonScope();
+            //kernel.Bind<IAccountRepository>().To<ListRepository>();
+            kernel.Bind<IAccountRepository>().To<AccountsDBRepository>();
+            kernel.Bind<IUsersRepository>().To<UsersDBRepository>();
             kernel.Bind<IAccountService>().To<Bank>();
          
             // kernel.Bind<IApplicationSettings>().To<ApplicationSettings>();

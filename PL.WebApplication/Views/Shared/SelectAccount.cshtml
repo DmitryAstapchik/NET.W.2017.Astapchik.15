@@ -19,7 +19,7 @@
                 <td>@acc.Owner</td>
                 <td>@acc.Balance</td>
                 <td>@acc.BonusPoints</td>
-                <td>@acc.AccountType</td>
+                <td>@acc.Type</td>
                 <td>
                     @using (Html.BeginForm(acc))
                     {
@@ -39,4 +39,5 @@
         }
     </tbody>
 </table>
-@Html.ActionLink("back to account service", "Index", null, new { @class = "btn btn-default" })
+@*@Html.ActionLink("back to account service", "Index", null, new { @class = "btn btn-default" })*@
+@Html.Partial("_HomeLink")

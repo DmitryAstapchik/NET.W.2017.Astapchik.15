@@ -6,29 +6,6 @@
   <project key="-2134652610">
     <configuration>DEBUG;TRACE</configuration>
   </project>
-  <sourcecode name="BankAccountMapper.cs" parser="StyleCop.CSharp.CsParser">
-    <timestamps>
-      <styleCop>2017.11.12 16:18:54.667</styleCop>
-      <settingsFile>2017.11.12 16:18:54.525</settingsFile>
-      <sourceFile>2017.12.13 14:20:15.833</sourceFile>
-      <parser>2017.11.12 16:18:54.667</parser>
-      <StyleCop.CSharp.DocumentationRules>2017.11.12 16:18:54.667</StyleCop.CSharp.DocumentationRules>
-      <StyleCop.CSharp.DocumentationRules.FilesHashCode>1579365089</StyleCop.CSharp.DocumentationRules.FilesHashCode>
-      <StyleCop.CSharp.LayoutRules>2017.11.12 16:18:54.667</StyleCop.CSharp.LayoutRules>
-      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
-      <StyleCop.CSharp.MaintainabilityRules>2017.11.12 16:18:54.667</StyleCop.CSharp.MaintainabilityRules>
-      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
-      <StyleCop.CSharp.NamingRules>2017.11.12 16:18:54.667</StyleCop.CSharp.NamingRules>
-      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
-      <StyleCop.CSharp.OrderingRules>2017.11.12 16:18:54.667</StyleCop.CSharp.OrderingRules>
-      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
-      <StyleCop.CSharp.ReadabilityRules>2017.11.12 16:18:54.667</StyleCop.CSharp.ReadabilityRules>
-      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
-      <StyleCop.CSharp.SpacingRules>2017.11.12 16:18:54.667</StyleCop.CSharp.SpacingRules>
-      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
-    </timestamps>
-    <violations />
-  </sourcecode>
   <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2017.11.12 16:18:54.667</styleCop>
@@ -52,11 +29,37 @@
     </timestamps>
     <violations />
   </sourcecode>
+  <project key="324464886">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="BankAccountMapper.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2017.11.12 16:18:54.667</styleCop>
+      <settingsFile>2017.11.12 16:18:54.525</settingsFile>
+      <sourceFile>2017.12.21 17:06:46.430</sourceFile>
+      <parser>2017.11.12 16:18:54.667</parser>
+      <StyleCop.CSharp.DocumentationRules>2017.11.12 16:18:54.667</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>1579365089</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2017.11.12 16:18:54.667</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2017.11.12 16:18:54.667</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2017.11.12 16:18:54.667</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2017.11.12 16:18:54.667</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2017.11.12 16:18:54.667</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2017.11.12 16:18:54.667</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
   <sourcecode name="Bank.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2017.11.12 16:18:54.667</styleCop>
       <settingsFile>2017.11.12 16:18:54.525</settingsFile>
-      <sourceFile>2017.12.13 15:13:50.281</sourceFile>
+      <sourceFile>2017.12.21 16:29:16.414</sourceFile>
       <parser>2017.11.12 16:18:54.667</parser>
       <StyleCop.CSharp.DocumentationRules>2017.11.12 16:18:54.667</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>1579365089</StyleCop.CSharp.DocumentationRules.FilesHashCode>

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ORM.EF\AccountModel.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\ORM.EF\AccountModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

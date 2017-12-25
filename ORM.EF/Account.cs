@@ -19,5 +19,8 @@ namespace ORM.EF
         public decimal Balance { get; set; }
         public float BonusPoints { get; set; }
         public string AccountType { get; set; }
+        public string UserEmail { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

@@ -29,3 +29,34 @@ E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\Co
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ConsolePL\obj\Debug\PL.ConsoleApp.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ConsolePL\obj\Debug\ConsolePL.exe
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\ConsolePL\obj\Debug\ConsolePL.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\ConsolePL.exe.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\ConsolePL.exe
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\ConsolePL.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DependencyResolver.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\Ninject.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\BLL.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\EntityFramework.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\BLL.Interface.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DependencyResolver.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DependencyResolver.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\Ninject.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DAL.Interface.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\BLL.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\BLL.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\EntityFramework.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\obj\Debug\PL.ConsoleApp.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\obj\Debug\PL.ConsoleApp.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\obj\Debug\ConsolePL.exe
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\obj\Debug\ConsolePL.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DAL.DB.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\ORM.EF.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DAL.DB.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\DAL.DB.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\ORM.EF.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.ConsoleApp\bin\Debug\ORM.EF.dll.config

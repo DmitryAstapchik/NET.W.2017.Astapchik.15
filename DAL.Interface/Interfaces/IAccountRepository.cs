@@ -11,28 +11,28 @@ namespace DAL.Interface
         /// Adds an account to a storage
         /// </summary>
         /// <param name="account">an account to add</param>
-        void Create(AccountDTO account);
+        void Create(BankAccountDTO account);
 
         /// <summary>
         /// Removes an account from a storage
         /// </summary>
         /// <param name="iban">IBAN of an account</param>
         /// <returns>account balance</returns>
-        void Delete(AccountDTO account);
+        void Delete(BankAccountDTO account);
 
         /// <summary>
         /// Gets an account from a storage
         /// </summary>
         /// <param name="iban">IBAN of an account</param>
         /// <returns>bank account instance</returns>
-        AccountDTO GetByIban(string iban);
+        BankAccountDTO GetByIban(string iban);
 
         /// <summary>
         /// Rewrites an account in a storage
         /// </summary>
         /// <param name="account">account to rewrite</param>
-        void Update(AccountDTO account);
+        void Update(BankAccountDTO account);
 
-        IEnumerable<AccountDTO> GetAllAccounts();
+        IEnumerable<BankAccountDTO> GetUserAccounts(string email);
     }
 }

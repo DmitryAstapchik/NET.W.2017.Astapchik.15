@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AccountModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AccountModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountSet" EntityType="AccountModel.Account" />
+    <EntitySet Name="UserSet" EntityType="AccountModel.User" />
+  </EntityContainer>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="IBAN" />
+    </Key>
+    <Property Name="IBAN" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="50" />
+    <Property Name="Owner" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" />
+    <Property Name="BonusPoints" Type="Single" Nullable="false" />
+    <Property Name="AccountType" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Documentation>
+      <Summary>account service web user</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <Property Name="FullName" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

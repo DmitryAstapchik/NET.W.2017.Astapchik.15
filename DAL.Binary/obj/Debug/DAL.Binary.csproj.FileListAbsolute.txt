@@ -9,3 +9,14 @@ E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DA
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.Binary.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.dll
 E:\studying\programming\EPAM training\Homework\Day 15\NET.W.2017.Astapchik.15\DAL\obj\Debug\DAL.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\DAL.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\DAL.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\System.ValueTuple.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\DAL.Interface.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\bin\Debug\System.ValueTuple.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\obj\Debug\DAL.Binary.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\obj\Debug\DAL.Binary.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\obj\Debug\DAL.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Binary\obj\Debug\DAL.pdb

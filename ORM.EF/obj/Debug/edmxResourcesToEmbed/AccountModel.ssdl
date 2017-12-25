@@ -2,15 +2,41 @@
 <Schema Namespace="AccountModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="AccountModelStoreContainer">
     <EntitySet Name="AccountSet" EntityType="AccountModel.Store.AccountSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="AccountModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UserAccount" Association="AccountModel.Store.UserAccount">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Account" EntitySet="AccountSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="AccountSet">
     <Key>
       <PropertyRef Name="IBAN" />
     </Key>
-    <Property Name="IBAN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IBAN" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="Owner" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Balance" Type="decimal" Nullable="false" />
     <Property Name="BonusPoints" Type="real" Nullable="false" />
     <Property Name="AccountType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserEmail" Type="nvarchar" Nullable="false" MaxLength="50" />
   </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="UserAccount">
+    <End Role="User" Type="AccountModel.Store.UserSet" Multiplicity="1" />
+    <End Role="Account" Type="AccountModel.Store.AccountSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Email" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="UserEmail" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
