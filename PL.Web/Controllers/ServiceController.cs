@@ -70,18 +70,28 @@ namespace PL.WebApplication.Controllers
 
             if (ModelState.IsValid)
             {
-                var newBalance = service.MakeDeposit(account.IBAN, amount.Value);
-                account.Balance = newBalance;
-                var values = new RouteValueDictionary(account)
+                try
                 {
-                    { "amount", amount }
-                };
-                return RedirectToAction("DepositMade", values);
+                    service.MakeDeposit(account.IBAN, amount.Value);
+                }
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == account.IBAN);
+                    var values = new RouteValueDictionary(account)
+                    {
+                        { "amount", amount }
+                    };
+                    return RedirectToAction("DepositMade", values);
+                }
+
             }
-            else
-            {
-                return View("DepositTo", account);
-            }
+
+            return View("DepositTo", account);
         }
 
         public ViewResult DepositMade(Models.BankAccount account, decimal amount)
@@ -94,7 +104,6 @@ namespace PL.WebApplication.Controllers
         public ActionResult Withdraw()
         {
             var user = usersRepo.GetByEmail(User.Identity.Name);
-
             var accounts = service.GetPersonalAccounts(user).Select(a => (Models.BankAccount)a);
             return View(accounts);
         }
@@ -114,24 +123,20 @@ namespace PL.WebApplication.Controllers
                 ModelState.AddModelError("withdrawal amount", "withdrawal amount must be a positive number");
             }
 
-            //if (ModelState.IsValid)
-            //{
-            //decimal newBalance;
             if (ModelState.IsValid)
             {
                 try
                 {
-                    account.Balance = service.MakeWithdrawal(account.IBAN, amount.Value);
+                    service.MakeWithdrawal(account.IBAN, amount.Value);
                 }
-                catch (Exception ex)
+                catch (ArgumentException ex)
                 {
-                    ModelState.AddModelError("", ex.Message);
-                    //throw;
+                    ModelState.AddModelError(string.Empty, ex.Message);
                 }
 
                 if (ModelState.IsValid)
                 {
-                    //account.Balance = newBalance;
+                    account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == account.IBAN);
                     var values = new RouteValueDictionary(account)
                     {
                         { "amount" , amount }
@@ -198,9 +203,9 @@ namespace PL.WebApplication.Controllers
         [HttpPost]
         public ActionResult CreateAccount(Models.NewAccount account)
         {
-            if (account.StartBalance < (int)account.StartType)
+            if (account.StartBalance < (int)account.Type)
             {
-                ModelState.AddModelError(nameof(account.StartBalance), $"minimal start balance amount is {(int)account.StartType}");
+                ModelState.AddModelError(nameof(account.StartBalance), $"minimal start balance amount is {(int)account.Type}");
             }
 
             //if (string.IsNullOrWhiteSpace(account.Owner))

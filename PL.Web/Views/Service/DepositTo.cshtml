@@ -7,6 +7,8 @@
 
 @Html.Partial("_AccountInfo", Model)
 
+@Html.ValidationSummary(false, null, new { @class = "text-danger" })
+
 @using (Html.BeginForm("MakeDeposit", "Service", Model, FormMethod.Post, new { @class = "form-inline" }))
 {
     <div class="form-group">
@@ -15,23 +17,26 @@
         <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Deposit</button>
     </div>
 
-    @*<script>
-    $(function () {
-        $('.button').click(function () {
-            var amount = $("#amount").val();
-            this.href = this.href.replace("xxx", ipvalue);
-            @{
-                ViewBag.ModalTitle = $"Deposit  to this account?";
-            }
-        });
-    });
-    </script>*@
-
-    {
-        ViewBag.ModalTitle = string.Format("Deposit {0:C} to this account?", "");
-    }
-
     @Html.Partial("_Modal", Model)
 }
 
-@Html.ValidationMessage("deposit amount", new { @class = "text-danger"})
+@*@Html.ValidationMessage("deposit amount", new { @class = "text-danger" })*@
+
+@{ 
+    ViewBag.Action = "deposit";
+    ViewBag.LinkText = "back to accounts list";
+}
+<br />
+@Html.Partial("_BackLink")
+
+@section Scripts
+{
+    <script>
+        $(function () {
+            $("button").click(function () {
+                var amount = $("#amount").val();
+                $(".modal-title").text("Deposit " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " to this account?");
+            });
+        });
+    </script>
+}

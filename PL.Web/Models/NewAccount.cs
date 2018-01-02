@@ -12,7 +12,7 @@ namespace PL.WebApplication.Models
         public decimal StartBalance { get; set; }
 
         [Display(Name = "Account type")]
-        public AccountType StartType { get; set; }
+        public AccountType Type { get; set; }
 
         public enum AccountType
         {

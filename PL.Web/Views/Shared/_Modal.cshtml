@@ -7,21 +7,14 @@
                 <h4 class="modal-title text-primary">@ViewBag.ModalTitle</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-            <div class="modal-body" id="1">
-                @Html.Partial("_AccountInfo", Model)
-                <script>  
-                    //var am = $("#amount").val();
 
-                    $(document).ready(function () {
-                        $(this).text("12123");
-                    });
-                 
-                </script>
-                asd
+            <div class="modal-body">
+                @Html.Partial("_AccountInfo", Model)
             </div>
+
             <div class="modal-footer" style="text-align:center">
                 <button type="submit" class="btn btn-primary">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>
