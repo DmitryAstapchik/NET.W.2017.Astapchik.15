@@ -62,15 +62,20 @@ namespace BLL
             }
 
             var acc = repository.GetByIban(iban);
-            repository.Delete(acc);
+            acc.Status = BankAccountDTO.AccountStatus.Inactive;
+            repository.Update(acc);
             return acc.Balance;
         }
 
-        public IEnumerable<BankAccount> GetUserAccounts(string email)
+        public IEnumerable<BankAccount> GetPersonalAccounts(AccountOwner owner)
         {
-            foreach (var account in this.repository.GetUserAccounts(email))
+            var accounts = this.repository.GetByOwner( new AccountOwnerDTO { PassportID = owner.PassportID, FullName = owner.FullName, Email = owner.Email });
+            if (accounts != null)
             {
-                yield return account.FromDTO();
+                foreach (var account in accounts)
+                {
+                    yield return account.FromDTO();
+                }
             }
         }
 
@@ -135,17 +140,17 @@ namespace BLL
         }
 
         /// <summary>
-        /// Opens a new account for <paramref name="holder"/> with <paramref name="startBalance"/>.
+        /// Opens a new account for <paramref name="owner"/> with <paramref name="startBalance"/>.
         /// </summary>
-        /// <param name="holder">person's full name</param>
+        /// <param name="owner">person's full name</param>
         /// <param name="startBalance">first deposit amount</param>
         /// <returns>IBAN of a new account</returns>
         /// <exception cref="ArgumentException">Start balance is lesser than minimal.</exception>
-        public string OpenAccount(string holder, decimal startBalance)
+        public string OpenAccount(AccountOwner owner, decimal startBalance)
         {
-            if (string.IsNullOrWhiteSpace(holder))
+            if (owner == null)
             {
-                throw new ArgumentException("No significant characters are given.", "holder");
+                throw new ArgumentNullException(nameof(owner));
             }
 
             //if (startBalance < MinDeposit)
@@ -156,15 +161,15 @@ namespace BLL
             BankAccount account;
             if (startBalance < 1000)
             {
-                account = new StandardAccount(ibanGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 0);
+                account = new StandardAccount(ibanGenerator.GenerateIBAN(), owner, startBalance, bonusPoints: 0);
             }
             else if (startBalance < 10000)
             {
-                account = new GoldAccount(ibanGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 5);
+                account = new GoldAccount(ibanGenerator.GenerateIBAN(), owner, startBalance, bonusPoints: 5);
             }
             else
             {
-                account = new PlatinumAccount(ibanGenerator.GenerateIBAN(), holder, startBalance, bonusPoints: 10);
+                account = new PlatinumAccount(ibanGenerator.GenerateIBAN(), owner, startBalance, bonusPoints: 10);
             }
 
             repository.Create(account.ToDTO());

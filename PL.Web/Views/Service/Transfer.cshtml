@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+@{
+    ViewBag.Title = "Transfer";
+}
+
+@Html.Partial("_PageHeader", "Make a transfer")
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label for="from" class="text-primary">Transfer from:</label>
+        <select class="form-control" id="from" size="5" style="max-width:none" required name="from">
+            @foreach (var acc in Model)
+                {
+                <option class="form-control" value="@acc.IBAN">
+                    @Html.Label("IBAN:")
+                    @Html.DisplayTextFor(a => acc.IBAN),
+                    @Html.Label("Owner:")
+                    @Html.DisplayTextFor(a => acc.Owner),
+                    @Html.Label("Balance:")
+                    @Html.DisplayTextFor(a => acc.Balance),
+                    @Html.Label("Bonus points:")
+                    @Html.DisplayTextFor(a => acc.BonusPoints),
+                    @Html.Label("Account type:")
+                    @Html.DisplayTextFor(a => acc.AccountType)
+                </option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="to" class="text-primary">Transfer to:</label>
+        <select class="form-control" id="to" size="5" style="max-width:none" required name="to">
+            @foreach (var acc in Model)
+                {
+                <option class="form-control" value="@acc.IBAN">
+                    @Html.Label("IBAN:")
+                    @Html.DisplayTextFor(a => acc.IBAN),
+                    @Html.Label("Owner:")
+                    @Html.DisplayTextFor(a => acc.Owner),
+                    @Html.Label("Balance:")
+                    @Html.DisplayTextFor(a => acc.Balance),
+                    @Html.Label("Bonus points:")
+                    @Html.DisplayTextFor(a => acc.BonusPoints),
+                    @Html.Label("Account type:")
+                    @Html.DisplayTextFor(a => acc.AccountType)
+                </option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="form-control btn btn-primary">Transfer</button>
+    @*<button class="form-control btn btn-primary" data-toggle="modal" data-target="#myModal">Transfer</button>
+        @Html.Partial("TransferModal")*@
+}
+<br />
+@Html.Partial("_HomeLink")

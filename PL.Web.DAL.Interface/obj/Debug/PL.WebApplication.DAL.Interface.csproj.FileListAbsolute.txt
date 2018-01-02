@@ -1,0 +1,9 @@
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\bin\Debug\PL.DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\bin\Debug\PL.DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\obj\Debug\PL.WebApplication.DAL.Interface.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\obj\Debug\PL.WebApplication.DAL.Interface.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\obj\Debug\PL.DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\obj\Debug\PL.DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\bin\Debug\BLL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\bin\Debug\BLL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL\bin\Debug\BLL.Interface.dll.config

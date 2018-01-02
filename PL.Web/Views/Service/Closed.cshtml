@@ -1,0 +1,11 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "Closed";
+}
+
+@{ 
+    ViewBag.Message = "The account is closed";
+    ViewBag.LinkText = "view list of accounts";
+    ViewBag.Action = "_AccountList";
+}
+@Html.Partial("_Done", Model)

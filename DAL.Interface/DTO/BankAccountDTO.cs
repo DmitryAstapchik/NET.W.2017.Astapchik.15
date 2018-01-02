@@ -7,7 +7,7 @@ namespace DAL.Interface
     /// </summary>
     public class BankAccountDTO
     {
-        public BankAccountDTO(string iban, string owner, decimal balance, float bonus, AccountType type)
+        public BankAccountDTO(string iban, AccountOwnerDTO owner, decimal balance, float bonus, AccountType type)
         {
             IBAN = iban;
             Owner = owner;
@@ -23,14 +23,22 @@ namespace DAL.Interface
             PlatinumAccount
         }
 
-        public string IBAN { get; private set; }
+        public enum AccountStatus
+        {
+            Active,
+            Inactive
+        }
 
-        public string Owner { get; private set; }
+        public string IBAN { get; set; }
 
-        public decimal Balance { get; private set; }
+        public AccountOwnerDTO Owner { get; set; }
 
-        public float BonusPoints { get; private set; }
+        public decimal Balance { get; set; }
 
-        public AccountType Type { get; private set; }
+        public float BonusPoints { get; set; }
+
+        public AccountType Type { get; set; }
+
+        public AccountStatus Status {get;set;}
     }
 }

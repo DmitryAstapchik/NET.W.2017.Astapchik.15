@@ -1,0 +1,37 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "DepositTo";
+}
+
+@Html.Partial("_PageHeader", "Deposit to account")
+
+@Html.Partial("_AccountInfo", Model)
+
+@using (Html.BeginForm("MakeDeposit", "Service", Model, FormMethod.Post, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+        <label for="amount" class="form-text ">Deposit amount:</label>
+        <input name="amount" id="amount" class="form-control mx-2" type="number" />
+        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Deposit</button>
+    </div>
+
+    @*<script>
+    $(function () {
+        $('.button').click(function () {
+            var amount = $("#amount").val();
+            this.href = this.href.replace("xxx", ipvalue);
+            @{
+                ViewBag.ModalTitle = $"Deposit  to this account?";
+            }
+        });
+    });
+    </script>*@
+
+    {
+        ViewBag.ModalTitle = string.Format("Deposit {0:C} to this account?", "");
+    }
+
+    @Html.Partial("_Modal", Model)
+}
+
+@Html.ValidationMessage("deposit amount", new { @class = "text-danger"})

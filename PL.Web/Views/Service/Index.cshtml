@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.Partial("_PageHeader", "Account service options")
+
+<div class="list-group">
+    <a href="@Url.Action("deposit")" class="list-group-item list-group-item-action"><span class="oi oi-arrow-thick-right"></span> Make a deposit </a>
+    <a href="@Url.Action("withdraw")" class="list-group-item list-group-item-action"><span class="oi oi-arrow-thick-left"></span> Make a withdrawal </a>
+    <a href="@Url.Action("transfer")" class="list-group-item list-group-item-action"><span class="oi oi-transfer"></span> Make a transfer </a>
+    <a href="@Url.Action("create")" class="list-group-item list-group-item-action"><span class="oi oi-plus"></span> Create a new account </a>
+    <a href="@Url.Action("close")" class="list-group-item list-group-item-action"><span class="oi oi-delete"></span> Close an account </a>
+    <a href="@Url.Action("AccountsList")" class="list-group-item list-group-item-action"><span class="oi oi-list"></span> View list of accounts </a>
+</div>

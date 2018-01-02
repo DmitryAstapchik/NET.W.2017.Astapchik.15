@@ -18,7 +18,7 @@ namespace DependencyResolver
             // kernel.Bind<IAccountStorage>().To<BinaryFileStorage>().WithConstructorArgument("test.bin");
             //kernel.Bind<IAccountRepository>().To<ListRepository>();
             kernel.Bind<IAccountRepository>().To<AccountsDBRepository>();
-            kernel.Bind<IUsersRepository>().To<UsersDBRepository>();
+            //kernel.Bind<IUsersRepository>().To<UsersDBRepository>();
             kernel.Bind<IAccountService>().To<Bank>();
          
             // kernel.Bind<IApplicationSettings>().To<ApplicationSettings>();

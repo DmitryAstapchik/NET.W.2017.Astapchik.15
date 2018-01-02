@@ -11,9 +11,9 @@ namespace DAL.Fake
     {
         private List<BankAccountDTO> storage = new List<BankAccountDTO>
         {
-            new BankAccountDTO("111", "owner1", 100, 23.34f, BankAccountDTO.AccountType.GoldAccount),
-            new BankAccountDTO("222", "owner2", 200, 0.55f, BankAccountDTO.AccountType.PlatinumAccount),
-            new BankAccountDTO("123", "owner1", 300, 34.34f, BankAccountDTO.AccountType.StandardAccount)
+            new BankAccountDTO( "111", new AccountOwnerDTO{PassportID = "pass1", FullName = "owner1", Email = "email1" }, 100,23.34f,BankAccountDTO.AccountType.GoldAccount ),
+            new BankAccountDTO("222", new AccountOwnerDTO{PassportID = "pass2", FullName = "owner2", Email = "email2" }, 200, 0.55f, BankAccountDTO.AccountType.PlatinumAccount),
+            new BankAccountDTO("123", new AccountOwnerDTO{PassportID = "pass1", FullName = "owner1", Email = "email1" }, 300, 34.34f, BankAccountDTO.AccountType.StandardAccount)
         };
 
         public void Create(BankAccountDTO account)
@@ -58,7 +58,7 @@ namespace DAL.Fake
             return this.storage;
         }
 
-        public IEnumerable<BankAccountDTO> GetUserAccounts(string email)
+        public IEnumerable<BankAccountDTO> GetByOwner(AccountOwnerDTO owner)
         {
             throw new NotImplementedException();
         }

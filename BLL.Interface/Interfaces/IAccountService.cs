@@ -13,7 +13,7 @@ namespace BLL.Interface
         /// <param name="holder">holder's full name</param>
         /// <param name="startBalance">start balance</param>
         /// <returns>IBAN of a new account</returns>
-        string OpenAccount(string holder, decimal startBalance);
+        string OpenAccount(AccountOwner owner, decimal startBalance);
 
         /// <summary>
         /// Closes an account with specified IBAN
@@ -38,6 +38,6 @@ namespace BLL.Interface
         /// <returns>new account balance</returns>
         decimal MakeWithdrawal(string iban, decimal amount);
 
-        IEnumerable<BankAccount> GetUserAccounts(string email);
+        IEnumerable<BankAccount> GetPersonalAccounts(AccountOwner owner);
     }
 }

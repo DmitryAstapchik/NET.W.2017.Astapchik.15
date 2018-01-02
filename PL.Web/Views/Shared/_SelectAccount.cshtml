@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+
+<table class="table table-bordered table-hover table-sm ">
+    <thead class="thead-light">
+        <tr>
+            <th class="text-center">IBAN</th>
+            <th class="text-center">Owner</th>
+            <th class="text-center">Balance</th>
+            <th class="text-center">Bonus points</th>
+            <th class="text-center">Account type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="5" class="text-center">You have no accounts</td>
+            </tr>
+        }
+        @foreach (var acc in Model)
+            {
+            <tr class="text-center @if (acc.Status == BLL.Interface.BankAccount.BankAccountStatus.Inactive) { <text>table-secondary</text> } " >
+                <td class="align-middle">@acc.IBAN</td>
+                <td class="align-middle">@acc.Owner</td>
+                <td class="align-middle">@acc.Balance</td>
+                <td class="align-middle">@acc.BonusPoints</td>
+                <td class="align-middle">@acc.AccountType</td>
+                <td>
+                    @if (acc.Status == BLL.Interface.BankAccount.BankAccountStatus.Inactive)
+                    {
+                        <span class="badge badge-info">Closed</span>
+                    }
+                    else
+                    {
+                        using (Html.BeginForm(acc))
+                        {
+                            if (ViewContext.RouteData.Values["action"].ToString() == "close")
+                             {
+                                <button class="btn btn-outline-primary btn-block " data-toggle="modal" data-target="#myModal">Close</button>
+                                { ViewBag.Message = "Close this account?"; }
+                                @Html.Partial("_Modal", acc)
+                            }
+                            else
+                            {
+
+                                <button class="btn btn-outline-primary btn-block text-capitalize">@ViewContext.RouteData.Values["action"]</button>
+                            }
+                        }
+                    }
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@Html.Partial("_HomeLink")

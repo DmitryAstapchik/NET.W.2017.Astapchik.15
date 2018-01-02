@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AccountModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AccountModelStoreContainer">
+    <EntitySet Name="BankAccountSet" EntityType="AccountModel.Store.BankAccountSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountOwnerSet" EntityType="AccountModel.Store.AccountOwnerSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="OwnerBankAccount" Association="AccountModel.Store.OwnerBankAccount">
+      <End Role="Owner" EntitySet="AccountOwnerSet" />
+      <End Role="BankAccount" EntitySet="BankAccountSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BankAccountSet">
+    <Key>
+      <PropertyRef Name="IBAN" />
+    </Key>
+    <Property Name="IBAN" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Balance" Type="decimal" Nullable="false" />
+    <Property Name="BonusPoints" Type="real" Nullable="false" />
+    <Property Name="AccountType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OwnerPID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" DefaultValue="active" />
+  </EntityType>
+  <EntityType Name="AccountOwnerSet">
+    <Key>
+      <PropertyRef Name="PassportID" />
+    </Key>
+    <Property Name="PassportID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="OwnerBankAccount">
+    <End Role="Owner" Type="AccountModel.Store.AccountOwnerSet" Multiplicity="1" />
+    <End Role="BankAccount" Type="AccountModel.Store.BankAccountSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="PassportID" />
+      </Principal>
+      <Dependent Role="BankAccount">
+        <PropertyRef Name="OwnerPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AccountModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="AccountModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BankAccountSet" EntityType="AccountModel.BankAccount" />
+          <EntitySet Name="AccountOwnerSet" EntityType="AccountModel.AccountOwner" />
+          <AssociationSet Name="OwnerBankAccount" Association="AccountModel.OwnerBankAccount">
+            <End Role="Owner" EntitySet="AccountOwnerSet" />
+            <End Role="BankAccount" EntitySet="BankAccountSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BankAccount">
+          <Key>
+            <PropertyRef Name="IBAN" />
+          </Key>
+          <Property Name="IBAN" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="50" />
+          <Property Name="Balance" Type="Decimal" Nullable="false" />
+          <Property Name="BonusPoints" Type="Single" Nullable="false" />
+          <Property Name="AccountType" Type="String" Nullable="false" />
+          <NavigationProperty Name="Owner" Relationship="AccountModel.OwnerBankAccount" FromRole="BankAccount" ToRole="Owner" />
+          <Property Name="OwnerPID" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="String" Nullable="false" DefaultValue="active" />
+        </EntityType>
+        <EntityType Name="AccountOwner" >
+          <Documentation>
+            <Summary>account service web user</Summary>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="PassportID" />
+          </Key>
+          <Property Name="PassportID" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="FullName" Type="String" Nullable="false" />
+          <NavigationProperty Name="BankAccounts" Relationship="AccountModel.OwnerBankAccount" FromRole="Owner" ToRole="BankAccount" />
+          <Property Name="Email" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="OwnerBankAccount">
+          <End Type="AccountModel.AccountOwner" Role="Owner" Multiplicity="1" />
+          <End Type="AccountModel.BankAccount" Role="BankAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Owner">
+              <PropertyRef Name="PassportID" />
+            </Principal>
+            <Dependent Role="BankAccount">
+              <PropertyRef Name="OwnerPID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AccountModelStoreContainer" CdmEntityContainer="AccountModelContainer">
+    <EntitySetMapping Name="BankAccountSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AccountModel.BankAccount)">
+        <MappingFragment StoreEntitySet="BankAccountSet">
+          <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="BonusPoints" ColumnName="BonusPoints" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="OwnerPID" ColumnName="OwnerPID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountOwnerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AccountModel.AccountOwner)">
+        <MappingFragment StoreEntitySet="AccountOwnerSet">
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

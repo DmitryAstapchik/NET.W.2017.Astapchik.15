@@ -1,0 +1,13 @@
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\PL.DAL.DB.dll.config
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\PL.DAL.DB.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\PL.DAL.DB.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\EntityFramework.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\EntityFramework.SqlServer.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\PL.DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\PL.DAL.Interface.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\EntityFramework.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\bin\Debug\EntityFramework.SqlServer.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\obj\Debug\PL.DAL.DB.csprojResolveAssemblyReference.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\obj\Debug\PL.DAL.DB.csproj.CoreCompileInputs.cache
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\obj\Debug\PL.DAL.DB.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.DAL.DB\obj\Debug\PL.DAL.DB.pdb

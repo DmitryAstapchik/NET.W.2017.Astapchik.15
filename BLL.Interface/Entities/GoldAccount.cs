@@ -12,7 +12,7 @@
         /// <param name="owner">account owner</param>
         /// <param name="balance">account balance</param>
         /// <param name="bonusPoints">account bonus points</param>
-        public GoldAccount(string iban, string owner, decimal balance, float bonusPoints) : base(iban, owner, balance, bonusPoints)
+        public GoldAccount(string iban, AccountOwner owner, decimal balance, float bonusPoints, BankAccountStatus status = BankAccountStatus.Active) : base(iban, owner, balance, bonusPoints, status)
         {
             this.BalanceValue = 5;
             this.DepositValue = 4;

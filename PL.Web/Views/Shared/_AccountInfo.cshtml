@@ -1,0 +1,19 @@
+﻿@model PL.WebApplication.Models.BankAccount
+
+<div class="card border-info my-3">
+    <h5 class="card-header text-info">Account info</h5>
+    <div class="card-body text-info">
+        <p class="card-text">
+            @Html.DisplayNameFor(m => m.IBAN):
+            @Html.DisplayFor(m => m.IBAN)<br />
+            @Html.DisplayNameFor(m => m.Owner):
+            @Html.DisplayFor(m => m.Owner)<br />
+            @Html.DisplayNameFor(m => m.Balance):
+            @Html.DisplayFor(m => m.Balance)<br />
+            @Html.DisplayNameFor(m => m.BonusPoints):
+            @Html.DisplayFor(m => m.BonusPoints)<br />
+            @Html.DisplayNameFor(m => m.AccountType):
+            @Html.DisplayFor(m => m.AccountType)
+        </p>
+    </div>
+</div>

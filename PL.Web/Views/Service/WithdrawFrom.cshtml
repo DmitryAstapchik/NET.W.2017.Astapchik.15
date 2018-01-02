@@ -1,0 +1,25 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "WithdrawFrom";
+}
+
+@Html.Partial("_PageHeader", "Withdraw from account")
+
+@Html.Partial("_AccountInfo", Model)
+
+@Html.ValidationSummary(true, null, new { @class = "text-danger" })
+
+@using (Html.BeginForm("MakeWithdrawal", "Service", Model, FormMethod.Post, new { @class = "form-inline" }))
+{
+    <div class="form-group">
+        <label for="amount">Withdrawal amount:</label>
+        <input name="amount" id="amount" class="form-control mx-2"  type="number" />
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Withdraw</button>
+    </div>
+    {
+        ViewBag.ModalTitle = "Withdraw from this account?";
+    }
+    @Html.Partial("_Modal", Model)
+}
+
+@Html.ValidationMessage("withdrawal amount", new { @class = "text-danger"})

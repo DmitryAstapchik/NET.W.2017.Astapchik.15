@@ -1,0 +1,9 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Partial("_PageHeader", "Make a deposit")
+
+@Html.Partial("_SelectAccount", Model)
+

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AccountModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AccountModelStoreContainer">
+    <EntitySet Name="BankAccountSet" EntityType="AccountModel.Store.BankAccountSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AccountOwnerSet" EntityType="AccountModel.Store.AccountOwnerSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="OwnerBankAccount" Association="AccountModel.Store.OwnerBankAccount">
+      <End Role="Owner" EntitySet="AccountOwnerSet" />
+      <End Role="BankAccount" EntitySet="BankAccountSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BankAccountSet">
+    <Key>
+      <PropertyRef Name="IBAN" />
+    </Key>
+    <Property Name="IBAN" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Balance" Type="decimal" Nullable="false" />
+    <Property Name="BonusPoints" Type="real" Nullable="false" />
+    <Property Name="AccountType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OwnerPID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" DefaultValue="active" />
+  </EntityType>
+  <EntityType Name="AccountOwnerSet">
+    <Key>
+      <PropertyRef Name="PassportID" />
+    </Key>
+    <Property Name="PassportID" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="OwnerBankAccount">
+    <End Role="Owner" Type="AccountModel.Store.AccountOwnerSet" Multiplicity="1" />
+    <End Role="BankAccount" Type="AccountModel.Store.BankAccountSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="PassportID" />
+      </Principal>
+      <Dependent Role="BankAccount">
+        <PropertyRef Name="OwnerPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

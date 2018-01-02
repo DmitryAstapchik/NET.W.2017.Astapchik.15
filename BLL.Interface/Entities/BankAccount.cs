@@ -33,16 +33,16 @@ namespace BLL.Interface
         /// <param name="owner">owner</param>
         /// <param name="balance">balance</param>
         /// <param name="bonusPoints">bonus points</param>
-        protected BankAccount(string iban, string owner, decimal balance, float bonusPoints)
+        protected BankAccount(string iban, AccountOwner owner, decimal balance, float bonusPoints, BankAccountStatus status )
         {
             if (string.IsNullOrWhiteSpace(iban))
             {
-                throw new ArgumentException("String is not significant.", "IBAN");
+                throw new ArgumentException("String is not significant.", nameof(iban));
             }
 
-            if (string.IsNullOrWhiteSpace(owner))
+            if (owner == null)
             {
-                throw new ArgumentException("String is not significant.", "owner");
+                throw new ArgumentNullException(nameof(owner));
             }
 
             if (bonusPoints < 0 || bonusPoints > MaxBonusPoints)
@@ -54,6 +54,7 @@ namespace BLL.Interface
             this.Owner = owner;
             this.Balance = balance;
             this.BonusPoints = bonusPoints;
+            this.Status = status;
         }
         #endregion
 
@@ -66,7 +67,7 @@ namespace BLL.Interface
         /// <summary>
         /// Owner of an account.
         /// </summary>
-        public string Owner { get; private set; }
+        public AccountOwner Owner { get; private set; }
 
         /// <summary>
         /// Gets an account balance.
@@ -80,6 +81,14 @@ namespace BLL.Interface
         {
             get => (float)Math.Round(bonusPoints, 2);
             set => bonusPoints = value < 0 ? 0 : value > MaxBonusPoints ? MaxBonusPoints : value;
+        }
+
+        public BankAccountStatus Status { get; private set; }
+
+        public enum BankAccountStatus
+        {
+            Active ,
+            Inactive
         }
 
         /// <summary>

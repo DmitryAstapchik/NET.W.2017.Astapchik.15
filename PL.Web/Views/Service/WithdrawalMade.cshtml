@@ -1,0 +1,11 @@
+﻿@model PL.WebApplication.Models.BankAccount
+@{
+    ViewBag.Title = "WithdrawalMade";
+}
+
+@{
+    ViewBag.Message = $"Withdrawal of {ViewBag.Amount.ToString("C")} is made";
+    ViewBag.Action = "withdraw";
+    ViewBag.LinkText = "back to accounts list";
+}
+@Html.Partial("_Done", Model)

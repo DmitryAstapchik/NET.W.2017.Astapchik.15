@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AccountOwner.cs" />
     <Compile Include="Entities\BankAccount.cs" />
     <Compile Include="Entities\BonusCalculator.cs" />
     <Compile Include="Entities\GoldAccount.cs" />

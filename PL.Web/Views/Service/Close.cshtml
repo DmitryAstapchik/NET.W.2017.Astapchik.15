@@ -1,0 +1,8 @@
+﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
+@{
+    ViewBag.Title = "Close";
+}
+
+@Html.Partial("_PageHeader", "Close an account")
+
+@Html.Partial("_SelectAccount", Model)

@@ -1,0 +1,14 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <ul class="navbar-nav ml-auto">
+        <li class="navbar-text"><span class="oi oi-person"></span> Hello, @User.Identity.Name!</li>
+        <li class="nav-item "><a href="@Url.Action("LogOff", "users")" class="nav-link "><span class="oi oi-account-logout"></span> Log Out</a></li>
+    </ul>
+}
+else
+{
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"> <a href="@Url.Action("login")" class="nav-link "> <span class="oi oi-account-login"></span> Log in</a> </li>
+        <li class="nav-item "><a href="@Url.Action("register")" class="nav-link "><span class="oi oi-task"></span> Register</a></li>
+    </ul>
+}

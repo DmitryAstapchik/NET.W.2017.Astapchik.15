@@ -33,6 +33,6 @@ namespace DAL.Interface
         /// <param name="account">account to rewrite</param>
         void Update(BankAccountDTO account);
 
-        IEnumerable<BankAccountDTO> GetUserAccounts(string email);
+        IEnumerable<BankAccountDTO> GetByOwner(AccountOwnerDTO owner);
     }
 }

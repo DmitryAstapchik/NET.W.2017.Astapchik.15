@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AccountModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AccountModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BankAccountSet" EntityType="AccountModel.BankAccount" />
+    <EntitySet Name="AccountOwnerSet" EntityType="AccountModel.AccountOwner" />
+    <AssociationSet Name="OwnerBankAccount" Association="AccountModel.OwnerBankAccount">
+      <End Role="Owner" EntitySet="AccountOwnerSet" />
+      <End Role="BankAccount" EntitySet="BankAccountSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BankAccount">
+    <Key>
+      <PropertyRef Name="IBAN" />
+    </Key>
+    <Property Name="IBAN" Type="String" Nullable="false" Unicode="true" FixedLength="false" MaxLength="50" />
+    <Property Name="Balance" Type="Decimal" Nullable="false" />
+    <Property Name="BonusPoints" Type="Single" Nullable="false" />
+    <Property Name="AccountType" Type="String" Nullable="false" />
+    <NavigationProperty Name="Owner" Relationship="AccountModel.OwnerBankAccount" FromRole="BankAccount" ToRole="Owner" />
+    <Property Name="OwnerPID" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="Status" Type="String" Nullable="false" DefaultValue="active" />
+  </EntityType>
+  <EntityType Name="AccountOwner">
+    <Documentation>
+      <Summary>account service web user</Summary>
+    </Documentation>
+    <Key>
+      <PropertyRef Name="PassportID" />
+    </Key>
+    <Property Name="PassportID" Type="String" Nullable="false" MaxLength="50" />
+    <Property Name="FullName" Type="String" Nullable="false" />
+    <NavigationProperty Name="BankAccounts" Relationship="AccountModel.OwnerBankAccount" FromRole="Owner" ToRole="BankAccount" />
+    <Property Name="Email" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="OwnerBankAccount">
+    <End Type="AccountModel.AccountOwner" Role="Owner" Multiplicity="1" />
+    <End Type="AccountModel.BankAccount" Role="BankAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="PassportID" />
+      </Principal>
+      <Dependent Role="BankAccount">
+        <PropertyRef Name="OwnerPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

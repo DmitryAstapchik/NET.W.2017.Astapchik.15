@@ -1,9 +1,0 @@
-﻿@if (User.Identity.IsAuthenticated)
-{
-    <ul class="nav navbar-nav navbar-right">
-        @*<li><span class="glyphicon glyphicon-log-out"></span></li> 
-        <li>@Html.ActionLink("Log out", "LogOff", "users")</li>*@
-        <li><a href="@Url.Action("LogOff", "users")"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-    </ul>
-    <p class="navbar-text navbar-right"><span class="glyphicon glyphicon-user"></span> Hello, @User.Identity.Name!</p>
-}

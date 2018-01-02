@@ -42,7 +42,7 @@ namespace DAL.Binary
             using (var writer = new BinaryWriter(stream))
             {
                 writer.Write(account.IBAN);
-                writer.Write(account.Owner);
+                writer.Write(account.Owner.FullName);
                 writer.Write(account.Balance);
                 writer.Write(account.BonusPoints);
                 writer.Write(account.Type.ToString());
@@ -74,7 +74,12 @@ namespace DAL.Binary
                 var balance = reader.ReadDecimal();
                 var bonus = reader.ReadSingle();
                 var type = reader.ReadString();
-                account = new BankAccountDTO(iban, owner, balance, bonus, (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), type));
+                account = new BankAccountDTO(
+                    iban, 
+                    new AccountOwnerDTO { Email = owner, FullName = owner, PassportID = owner }, 
+                    balance, 
+                    bonus, 
+                    (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), type));
             }
 
             return account;
@@ -136,7 +141,7 @@ namespace DAL.Binary
 
                 using (var writer = new BinaryWriter(reader.BaseStream))
                 {
-                    writer.Write(account.Owner);
+                    writer.Write(account.Owner.FullName);
                     writer.Write(account.Balance);
                     writer.Write(account.BonusPoints);
                     writer.Write(account.Type.ToString());
@@ -149,7 +154,7 @@ namespace DAL.Binary
             throw new NotImplementedException();
         }
 
-        public IEnumerable<BankAccountDTO> GetUserAccounts(string email)
+        public IEnumerable<BankAccountDTO> GetByOwner(AccountOwnerDTO owner)
         {
             throw new NotImplementedException();
         }
