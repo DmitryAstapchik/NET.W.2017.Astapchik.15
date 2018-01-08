@@ -5,6 +5,8 @@ using DAL.DB;
 using DAL.Fake;
 using DAL.Interface;
 using Ninject;
+using DAL.Interface.Interfaces;
+using DAL.DB.Repositories;
 
 namespace DependencyResolver
 {
@@ -17,7 +19,8 @@ namespace DependencyResolver
 
             // kernel.Bind<IAccountStorage>().To<BinaryFileStorage>().WithConstructorArgument("test.bin");
             //kernel.Bind<IAccountRepository>().To<ListRepository>();
-            kernel.Bind<IAccountRepository>().To<AccountsDBRepository>();
+            kernel.Bind<IAccountsRepository>().To<AccountsDBRepository>();
+            kernel.Bind<IAccountsUnitOfWork>().To<AccountsEFUnitOfWork>();
             //kernel.Bind<IUsersRepository>().To<UsersDBRepository>();
             kernel.Bind<IAccountService>().To<Bank>();
          

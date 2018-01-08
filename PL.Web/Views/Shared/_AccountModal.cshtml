@@ -1,10 +1,10 @@
 ﻿@model PL.WebApplication.Models.BankAccount
 
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="accountModal" role="dialog">
     <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header ">
-                <h4 class="modal-title text-primary">@ViewBag.ModalTitle</h4>
+                <h4 class="modal-title ">@ViewBag.ModalTitle</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -13,8 +13,8 @@
             </div>
 
             <div class="modal-footer" style="text-align:center">
-                <button type="submit" class="btn btn-primary">Yes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-primary w-25" value="@Model.IBAN" name="iban">Yes</button>
+                <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>

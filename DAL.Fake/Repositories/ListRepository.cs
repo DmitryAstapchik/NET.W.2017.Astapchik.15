@@ -7,7 +7,7 @@ using DAL.Interface;
 
 namespace DAL.Fake
 {
-    public class ListRepository : IAccountRepository
+    public class ListRepository : IAccountsRepository
     {
         private List<BankAccountDTO> storage = new List<BankAccountDTO>
         {

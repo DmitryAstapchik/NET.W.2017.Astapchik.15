@@ -7,22 +7,20 @@
 
 @Html.Partial("_AccountInfo", Model)
 
-@Html.ValidationSummary(false, null, new { @class = "text-danger" })
-
+@Html.ValidationSummary(true, null, new { @class = "text-danger" })
 @using (Html.BeginForm("MakeDeposit", "Service", Model, FormMethod.Post, new { @class = "form-inline" }))
 {
     <div class="form-group">
         <label for="amount" class="form-text ">Deposit amount:</label>
-        <input name="amount" id="amount" class="form-control mx-2" type="number" />
-        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">Deposit</button>
+        <input name="amount" id="amount" class="form-control mx-2" type="number" required min="1" />
+        <button type="button" class="btn btn-primary mr-2" data-toggle="modal_" data-target="#myModal">Deposit</button>
     </div>
-
+    @Html.ValidationMessage("deposit amount", new { @class = "text-danger" })
     @Html.Partial("_Modal", Model)
 }
 
-@*@Html.ValidationMessage("deposit amount", new { @class = "text-danger" })*@
 
-@{ 
+@{
     ViewBag.Action = "deposit";
     ViewBag.LinkText = "back to accounts list";
 }
@@ -31,12 +29,20 @@
 
 @section Scripts
 {
-    <script>
-        $(function () {
-            $("button").click(function () {
-                var amount = $("#amount").val();
-                $(".modal-title").text("Deposit " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " to this account?");
+    @Scripts.Render("~/bundles/jqueryval")
+
+        <script>
+            $(function () {
+                $("button").click(function () {
+                    if ($("form")[0].checkValidity()) {
+                        var amount = $("#amount").val();
+                        $(".modal-title").text("Deposit " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " to this account?");
+                        $("#myModal").modal();
+                    }
+                    else {
+                        $('<input type="submit">').hide().appendTo($("form")).click().remove();
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 }

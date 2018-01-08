@@ -12,7 +12,7 @@ namespace DAL.Binary
     /// <summary>
     /// class for work with binary accounts storage file
     /// </summary>
-    public class BinaryFileStorage : IAccountRepository
+    public class BinaryFileStorage : IAccountsRepository
     {
         /// <summary>
         /// path to a binary file

@@ -17,7 +17,7 @@ namespace BLL.Tests
         {
             get
             {
-                yield return new BankAccountDTO("123", "owner1", 120m, 2.33f, BankAccountDTO.AccountType.StandardAccount);
+                yield return new BankAccountDTO("123",  "owner1", 120m, 2.33f, BankAccountDTO.AccountType.StandardAccount);
                 yield return new BankAccountDTO("456", "owner2", 5000m, 5.44f, BankAccountDTO.AccountType.GoldAccount);
                 yield return new BankAccountDTO("789", "owner3", 10001m, 3.11f, BankAccountDTO.AccountType.PlatinumAccount);
             }

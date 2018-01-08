@@ -24,7 +24,11 @@ namespace PL.WebApplication
 
             NinjectModule registrations = new NinjectRegistrations();
             var kernel = new StandardKernel(registrations);
+            kernel.Unbind<ModelValidatorProvider>();
             System.Web.Mvc.DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+
+            //ModelValidatorProviders.Providers.Clear();
+            //ModelValidatorProviders.Providers.Add(ModelValidatorProviders.Providers));
         }
 
         //protected void Application_Error()

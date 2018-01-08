@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using BLL.Interface;
 using DAL.Interface;
+using DAL.Interface.Interfaces;
 
 namespace BLL
 {
@@ -35,16 +36,16 @@ namespace BLL
         /// <summary>
         /// bank accounts storage
         /// </summary>
-        private IAccountRepository repository;
+        private IAccountsUnitOfWork accountsRepo;
 
         /// <summary>
         /// Creates a new bank instance with specified storage, IBAN generator and bonus points calculator
         /// </summary>
-        /// <param name="repository">bank accounts storage</param>
+        /// <param name="uow">bank accounts storage</param>
         /// <param name="generator">IBAN generator</param>
-        public Bank(IAccountRepository repository, IIBANGenerator ibanGenerator, IBonusPointsCalculator calculator)
+        public Bank(IAccountsUnitOfWork uow, IIBANGenerator ibanGenerator, IBonusPointsCalculator calculator)
         {
-            this.repository = repository;
+            this.accountsRepo = uow;
             this.ibanGenerator = ibanGenerator;
             this.bonusCalculator = calculator;
         }
@@ -61,15 +62,17 @@ namespace BLL
                 throw new ArgumentException("No IBAN is given.", "IBAN");
             }
 
-            var acc = repository.GetByIban(iban);
+            var acc = accountsRepo.Accounts.GetByIban(iban);
             acc.Status = BankAccountDTO.AccountStatus.Inactive;
-            repository.Update(acc);
+            accountsRepo.Accounts.Update(acc);
+            accountsRepo.Save();
+
             return acc.Balance;
         }
 
         public IEnumerable<BankAccount> GetPersonalAccounts(AccountOwner owner)
         {
-            var accounts = this.repository.GetByOwner( new AccountOwnerDTO { PassportID = owner.PassportID, FullName = owner.FullName, Email = owner.Email });
+            var accounts = this.accountsRepo.Accounts.GetByOwner(new AccountOwnerDTO { PassportID = owner.PassportID, FullName = owner.FullName, Email = owner.Email });
             if (accounts != null)
             {
                 foreach (var account in accounts)
@@ -98,12 +101,24 @@ namespace BLL
                 throw new ArgumentException("Minimum deposit amount is " + MinDeposit.ToString("C"));
             }
 
-            var account = repository.GetByIban(iban).FromDTO();
+            var account = accountsRepo.Accounts.GetByIban(iban).FromDTO();
             account.Deposit(amount);
             account.BonusPoints += bonusCalculator.CalculateDepositBonus(account, amount);
-            repository.Update(account.ToDTO());
+            accountsRepo.Accounts.Update(account.ToDTO());
+            accountsRepo.Save();
 
             return account.Balance;
+        }
+
+        public void MakeTransfer(string fromIBAN, string toIBAN, decimal amount)
+        {
+            var from = accountsRepo.Accounts.GetByIban(fromIBAN).FromDTO();
+            var to = accountsRepo.Accounts.GetByIban(toIBAN).FromDTO();
+            from.Withdraw(amount);
+            to.Deposit(amount);
+            accountsRepo.Accounts.Update(from.ToDTO());
+            accountsRepo.Accounts.Update(to.ToDTO());
+            accountsRepo.Save();
         }
 
         /// <summary>
@@ -125,7 +140,7 @@ namespace BLL
                 throw new ArgumentException("Minimum withdrawal amount is " + MinWithdrawal.ToString("C"));
             }
 
-            var account = BankAccountMapper.FromDTO(repository.GetByIban(iban));
+            var account = accountsRepo.Accounts.GetByIban(iban).FromDTO();
 
             if (amount > account.Balance)
             {
@@ -134,7 +149,8 @@ namespace BLL
 
             account.Withdraw(amount);
             account.BonusPoints -= bonusCalculator.CalculateWithdrawalBonus(account, amount);
-            repository.Update(account.ToDTO());
+            accountsRepo.Accounts.Update(account.ToDTO());
+            accountsRepo.Save();
 
             return account.Balance;
         }
@@ -172,7 +188,8 @@ namespace BLL
                 account = new PlatinumAccount(ibanGenerator.GenerateIBAN(), owner, startBalance, bonusPoints: 10);
             }
 
-            repository.Create(account.ToDTO());
+            accountsRepo.Accounts.Create(account.ToDTO());
+            accountsRepo.Save();
 
             return account.IBAN;
         }

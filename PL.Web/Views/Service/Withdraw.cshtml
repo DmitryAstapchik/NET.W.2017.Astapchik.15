@@ -5,4 +5,7 @@
 
 @Html.Partial("_PageHeader", "Make a withdrawal")
 
-@Html.Partial("_SelectAccount", Model)
+@using (Html.BeginForm("WithdrawFrom", "service"))
+{
+    @Html.Partial("_SelectAccount", Model)
+}

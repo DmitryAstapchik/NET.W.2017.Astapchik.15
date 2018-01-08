@@ -17,9 +17,9 @@ namespace BLL.Tests
         private static IBonusPointsCalculator calculator = Mock.Of<IBonusPointsCalculator>();
         private static IIBANGenerator generator = Mock.Of<IIBANGenerator>(g => g.GenerateIBAN() == "fake iban");
         private static Mock<BankAccountDTO> dtoMock = new Mock<BankAccountDTO>("iban", "owner", 22m, 0, BankAccountDTO.AccountType.StandardAccount);
-        private static IAccountRepository storage = Mock.Of<IAccountRepository>(st => st.GetByIban(It.IsAny<string>()) == dtoMock.Object);
+        private static IAccountsRepository storage = Mock.Of<IAccountsRepository>(st => st.GetByIban(It.IsAny<string>()) == dtoMock.Object);
         private static Bank bank = new Bank(storage, generator, calculator);
-        private static Mock<IAccountRepository> storageMock = Mock.Get(storage);
+        private static Mock<IAccountsRepository> storageMock = Mock.Get(storage);
 
         [Test]
         public void CloseAccountTest()

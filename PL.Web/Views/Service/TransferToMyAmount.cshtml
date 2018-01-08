@@ -1,0 +1,21 @@
+﻿@model   PL.WebApplication.Models.BankAccount[]
+@{
+    ViewBag.Title = "TransferToMyAmount";
+}
+
+@Html.Partial("_PageHeader", "Transfer to my account")
+
+<u class="h6">Transfer from:</u>
+@Html.Partial("_AccountInfo", Model[0])
+
+<u class="h6">Transfer to:</u>
+@Html.Partial("_accountinfo", Model[1])
+
+@using (Html.BeginForm("MakeTransfer", "service", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.Hidden("fromIBAN", Model[0].IBAN)
+    @Html.Hidden("toIBAN", Model[1].IBAN)
+    <label class="form-text ">Transfer amount:</label>
+    <input type="number" name="amount" value="" class="form-control mx-2 " required min="1" />
+    <button type="submit" class="btn btn-primary">Transfer</button>
+}

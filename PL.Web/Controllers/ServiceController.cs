@@ -26,6 +26,7 @@ namespace PL.WebApplication.Controllers
         public ServiceController(IUsersRepository repo)
         {
             var kernel = new StandardKernel();
+            //kernel.Unbind<ModelValidatorProvider>();
             kernel.ConfigurateResolver();
             service = kernel.Get<IAccountService>();
             usersRepo = repo;
@@ -53,43 +54,46 @@ namespace PL.WebApplication.Controllers
             return View(accounts);
         }
 
-        [ActionName("deposit")]
+        // [ActionName("deposit")]
         [HttpPost]
-        public ActionResult DepositTo(Models.BankAccount account)
+        public ActionResult DepositTo(string iban)
         {
-            return View("DepositTo", account);
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == iban);
+            return View("DepositTo", acc);
         }
 
         [HttpPost]
-        public ActionResult MakeDeposit(Models.BankAccount account, decimal? amount)
+        public ActionResult MakeDeposit(string iban, decimal amount)
         {
-            if (!amount.HasValue || amount <= 0)
+            //if (!amount.HasValue || amount <= 0)
+            //{
+            //    ModelState.AddModelError("deposit amount", "deposit amount must be a positive number");
+            //}
+
+            //if (ModelState.IsValid)
+            //{
+            try
             {
-                ModelState.AddModelError("deposit amount", "deposit amount must be a positive number");
+                service.MakeDeposit(iban, amount);
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
             }
 
+            Models.BankAccount account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == iban);
             if (ModelState.IsValid)
             {
-                try
-                {
-                    service.MakeDeposit(account.IBAN, amount.Value);
-                }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError(string.Empty, ex.Message);
-                }
-
-                if (ModelState.IsValid)
-                {
-                    account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == account.IBAN);
-                    var values = new RouteValueDictionary(account)
+                account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == iban);
+                var values = new RouteValueDictionary(account)
                     {
                         { "amount", amount }
                     };
-                    return RedirectToAction("DepositMade", values);
-                }
-
+                return RedirectToAction("DepositMade", values);
             }
+
+            //}
 
             return View("DepositTo", account);
         }
@@ -108,42 +112,45 @@ namespace PL.WebApplication.Controllers
             return View(accounts);
         }
 
-        [ActionName("withdraw")]
+        // [ActionName("withdraw")]
         [HttpPost]
-        public ViewResult WithdrawFrom(Models.BankAccount account)
+        public ViewResult WithdrawFrom(string iban)
         {
-            return View("WithdrawFrom", account);
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == iban);
+            return View("WithdrawFrom", acc);
         }
 
         [HttpPost]
-        public ActionResult MakeWithdrawal(Models.BankAccount account, decimal? amount)
+        public ActionResult MakeWithdrawal(string iban, decimal amount)
         {
-            if (!amount.HasValue || amount <= 0)
-            {
-                ModelState.AddModelError("withdrawal amount", "withdrawal amount must be a positive number");
-            }
+            //if (!amount.HasValue || amount <= 0)
+            //{
+            //    ModelState.AddModelError("withdrawal amount", "withdrawal amount must be a positive number");
+            //}
 
+            //if (ModelState.IsValid)
+            //{
+            Models.BankAccount account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == iban);
+            try
+            {
+                service.MakeWithdrawal(iban, amount);
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+            }
+          
             if (ModelState.IsValid)
             {
-                try
-                {
-                    service.MakeWithdrawal(account.IBAN, amount.Value);
-                }
-                catch (ArgumentException ex)
-                {
-                    ModelState.AddModelError(string.Empty, ex.Message);
-                }
-
-                if (ModelState.IsValid)
-                {
-                    account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == account.IBAN);
-                    var values = new RouteValueDictionary(account)
+                account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == account.IBAN);
+                var values = new RouteValueDictionary(account)
                     {
                         { "amount" , amount }
                     };
-                    return RedirectToAction("WithdrawalMade", values);
-                }
+                return RedirectToAction("WithdrawalMade", values);
             }
+            //}
 
             return View("WithdrawFrom", account);
         }
@@ -158,38 +165,52 @@ namespace PL.WebApplication.Controllers
         public ActionResult Transfer()
         {
             var user = usersRepo.GetByEmail(User.Identity.Name);
-
             var accounts = service.GetPersonalAccounts(user).Select(a => (Models.BankAccount)a);
             return View(accounts);
         }
 
-        [ActionName("transfer")]
+        // [ActionName("transfer")]
         [HttpPost]
-        public ActionResult Transfer(string from, string to)
+        public ActionResult TransferToMy(string fromIBAN)
         {
-            var user = usersRepo.GetByEmail(User.Identity.Name);
+            //var user = usersRepo.GetByEmail(User.Identity.Name);
+            //var acc1 = service.GetPersonalAccounts(user).Single(a => a.IBAN == from);
+            //var acc2 = service.GetPersonalAccounts(user).Single(a => a.IBAN == to);
+            //return View("TransferBetween", new[] { acc1, (Models.BankAccount)acc2 });
 
-            var acc1 = service.GetPersonalAccounts(user).Single(a => a.IBAN == from);
-            var acc2 = service.GetPersonalAccounts(user).Single(a => a.IBAN == to);
-            return View("TransferBetween", new[] { acc1, (Models.BankAccount)acc2 });
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            ViewBag.Accounts = service.GetPersonalAccounts(user).Where(a => a.IBAN != fromIBAN).Select(a => (Models.BankAccount)a).ToArray();
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == fromIBAN);
+            return View(acc);
         }
 
         [HttpPost]
-        public ActionResult MakeTransfer(string from, string to, decimal amount)
+        public ActionResult TransferToMyAmount(string fromIBAN, string toIBAN)
         {
-            service.MakeWithdrawal(from, amount);
-            service.MakeDeposit(to, amount);
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            var from = service.GetPersonalAccounts(user).Single(a => a.IBAN == fromIBAN);
+            var to = service.GetPersonalAccounts(user).Single(a => a.IBAN == toIBAN);
+            return View(new[] { from, (Models.BankAccount)to });
+        }
+
+        [HttpPost]
+        public ActionResult MakeTransfer(string fromIBAN, string toIBAN, decimal amount)
+        {
+            //service.MakeWithdrawal(fromIBAN, amount);
+            //service.MakeDeposit(toIBAN, amount);
+            service.MakeTransfer(fromIBAN, toIBAN, amount);
+
             var user = usersRepo.GetByEmail(User.Identity.Name);
 
-            var acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == to);
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == fromIBAN);
             var values = new RouteValueDictionary(acc) { { "amount", amount } };
             return RedirectToAction("TransferMade", values);
         }
 
-        public ViewResult TransferMade(Models.BankAccount to, decimal amount)
+        public ViewResult TransferMade(Models.BankAccount from, decimal amount)
         {
             ViewBag.Amount = amount;
-            return View(to);
+            return View(from);
         }
 
         [ActionName("create")]
@@ -199,31 +220,28 @@ namespace PL.WebApplication.Controllers
             return View();
         }
 
+        //[ConfirmCreate]
         [ActionName("create")]
         [HttpPost]
         public ActionResult CreateAccount(Models.NewAccount account)
         {
-            if (account.StartBalance < (int)account.Type)
-            {
-                ModelState.AddModelError(nameof(account.StartBalance), $"minimal start balance amount is {(int)account.Type}");
-            }
-
-            //if (string.IsNullOrWhiteSpace(account.Owner))
-            //{
-            //    ModelState.AddModelError("owner", "owner cannot be empty or white spaces only");
-            //}
-
             if (ModelState.IsValid)
             {
                 var user = usersRepo.GetByEmail(User.Identity.Name);
-
                 var iban = service.OpenAccount(user, account.StartBalance);
                 var acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == iban);
-                //var dic = new RouteValueDictionary { { "account", (Models.BankAccount)acc }, { "owner", (Models.AccountOwner)acc.Owner } };
                 return RedirectToAction("Created", (Models.BankAccount)acc);
             }
 
-            return View();
+            return View(account);
+        }
+
+        [HttpPost]
+        public PartialViewResult GetAccountModal(string iban)
+        {
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == iban);
+            return PartialView("_AccountModal", acc);
         }
 
         public ViewResult Created(Models.BankAccount account)
@@ -243,13 +261,12 @@ namespace PL.WebApplication.Controllers
 
         [ActionName("close")]
         [HttpPost]
-        public ActionResult CloseAccount(Models.BankAccount account)
+        public ActionResult CloseAccount(string iban)
         {
-            //var user = usersRepo.GetByEmail(User.Identity.Name);
-
-            //var acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == account.IBAN);
-            service.CloseAccount(account.IBAN);
-            return RedirectToAction("Closed", account);
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == iban);
+            service.CloseAccount(iban);
+            return RedirectToAction("Closed", acc);
         }
 
         public ViewResult Closed(Models.BankAccount account)

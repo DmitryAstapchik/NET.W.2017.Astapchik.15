@@ -5,5 +5,8 @@
 
 @Html.Partial("_PageHeader", "Make a deposit")
 
-@Html.Partial("_SelectAccount", Model)
+@using (Html.BeginForm("DepositTo", "service"))
+{
+    @Html.Partial("_SelectAccount", Model)
+}
 

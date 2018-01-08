@@ -13,8 +13,8 @@
 {
     <div class="form-group">
         <label for="amount">Withdrawal amount:</label>
-        <input name="amount" id="amount" class="form-control mx-2"  type="number" />
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Withdraw</button>
+        <input name="amount" id="amount" class="form-control mx-2 "  type="number" required min="1"/>
+        <button type="button" class="btn btn-primary" data-toggle="modal_" data-target="#myModal">Withdraw</button>
     </div>
 
     @Html.Partial("_Modal", Model)
@@ -34,8 +34,15 @@
     <script>
         $(function () {
             $("button").click(function () {
-                var amount = $("#amount").val();
-                $(".modal-title").text("Withdraw " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " from this account?");
+                if ($("form")[0].checkValidity()) {
+                    var amount = $("#amount").val();
+                    $(".modal-title").text("Withdraw " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " from this account?");
+                    $("#myModal").modal();
+                }
+                else {
+                    $('<input type="submit">').hide().appendTo($("form")).click().remove();
+                    //$('#amount').addClass("is-invalid");
+                }
             });
         });
     </script>

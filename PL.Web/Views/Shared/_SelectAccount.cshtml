@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
 
 <table class="table table-bordered table-hover table-sm ">
-    <thead class="thead-light">
+    <caption >My accounts</caption>
+    <thead class="thead-dark">
         <tr>
             <th class="text-center">IBAN</th>
             <th class="text-center">Owner</th>
@@ -19,7 +20,7 @@
         }
         @foreach (var acc in Model)
             {
-            <tr class="text-center @if (acc.Status == BLL.Interface.BankAccount.BankAccountStatus.Inactive) { <text>table-secondary</text> } " >
+            <tr class="text-center @if (acc.Status == BLL.Interface.BankAccount.BankAccountStatus.Inactive) { <text>table-secondary</text> } ">
                 <td class="align-middle">@acc.IBAN</td>
                 <td class="align-middle">@acc.Owner</td>
                 <td class="align-middle">@acc.Balance</td>
@@ -32,19 +33,36 @@
                     }
                     else
                     {
-                        using (Html.BeginForm(acc))
+                        if (ViewContext.RouteData.Values["action"].ToString().Equals("TransferToMy", StringComparison.OrdinalIgnoreCase))
                         {
-                            if (ViewContext.RouteData.Values["action"].ToString() == "close")
-                             {
-                                <button class="btn btn-outline-primary btn-block " data-toggle="modal" data-target="#myModal">Close</button>
-                                { ViewBag.Message = "Close this account?"; }
-                                @Html.Partial("_Modal", acc)
-                            }
-                            else
-                            {
+                            <button class="btn btn-outline-primary btn-block" name="toIBAN" value="@acc.IBAN" type="submit">Transfer</button>
+                        }
 
-                                <button class="btn btn-outline-primary btn-block text-capitalize">@ViewContext.RouteData.Values["action"]</button>
-                            }
+                        else if (ViewContext.RouteData.Values["action"].ToString().Equals("transfer", StringComparison.OrdinalIgnoreCase))
+                        {
+
+                            <div class="btn-group">
+                                <button type="button" class="btn  btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                                    Transfer
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button class="dropdown-item btn" formaction="@Url.Action("TransferToMy")" type="submit" name="fromIBAN" value="@acc.IBAN">To my account</button>
+                                    <button class="dropdown-item" href="#">To another's account</button>
+                                </div>
+                            </div>
+                        }
+
+                        else if (ViewContext.RouteData.Values["action"].ToString().Equals("close", StringComparison.OrdinalIgnoreCase))
+                        {
+                            @*<button type="button" class="btn btn-outline-primary btn-block " data-toggle="modal" data-target="#myModal">Close</button>*@
+                            @*{ ViewBag.ModalTitle = "Close this account?"; }
+                            @Html.Partial("_Modal", acc)*@
+                            <button type="submit" value="@acc.IBAN" name="iban" class="btn btn-outline-primary btn-block ">Close</button>
+                        }
+
+                        else
+                        {
+                            <button class="btn btn-outline-primary btn-block text-capitalize " name="iban" value="@acc.IBAN">@ViewContext.RouteData.Values["action"].ToString()</button>
                         }
                     }
 

@@ -1,0 +1,36 @@
+﻿@model PL.WebApplication.Models.NewAccount
+
+<div class="modal" tabindex="-1" role="dialog" id="createModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary">Create a new account?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card border-info ">
+                    <div class="card-header h4 text-info">New account</div>
+                    <div class="card-body text-info">
+                        <div class="card-text">
+                            <p>
+                                @Html.LabelFor(m => m.Type, new { @class = "font-weight-bold" }):
+                                <label id="typeVal"></label>
+                            </p>
+                            <p>
+                                @Html.LabelFor(m => m.StartBalance, new { @class = "font-weight-bold" }):
+                                <label id="balanceVal"></label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+

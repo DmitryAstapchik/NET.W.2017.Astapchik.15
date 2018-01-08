@@ -1,0 +1,24 @@
+﻿@model PL.WebApplication.Models.BankAccount
+
+@{
+    ViewBag.Title = "TransferToMy";
+}
+
+@Html.Partial("_PageHeader", "Transfer to my account")
+
+@*<h4 class="bg-info rounded text-light px-2">Transfer from:</h4>*@
+<u class="h6">Transfer from:</u>
+@Html.Partial("_AccountInfo", Model)
+
+<hr />
+
+@*<h4 class="bg-info rounded text-light px-2" > Transfer to: </h4>*@ 
+<u class="h6">Transfer to:</u>
+@{ViewBag.ButtonText = "Transfer";}
+
+@using (Html.BeginForm("TransferToMyAmount", "service"))
+{
+    @Html.Hidden("fromIBAN", Model.IBAN)
+    @*@Html.Hidden("toIBAN")*@
+    @Html.Partial("_SelectAccount", (IEnumerable<PL.WebApplication.Models.BankAccount>)ViewBag.Accounts)
+}

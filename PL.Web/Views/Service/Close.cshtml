@@ -5,4 +5,25 @@
 
 @Html.Partial("_PageHeader", "Close an account")
 
-@Html.Partial("_SelectAccount", Model)
+@using (Ajax.BeginForm("GetAccountModal", new AjaxOptions { UpdateTargetId = "modal", OnComplete = "OnComplete" }))
+{
+    @Html.Partial("_SelectAccount", Model)
+}
+@Scripts.Render("~/scripts/jquery-3.0.0.min.js")
+@Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+
+@using (Html.BeginForm())
+{
+    <div id="modal"> </div>
+}
+
+
+@section Scripts{
+   
+    <script>
+        function OnComplete() {
+            $('.modal-title').text('Close this account?');
+            $('#accountModal').modal();
+        }
+    </script>
+}
