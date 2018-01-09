@@ -26,7 +26,7 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\bin
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\bin\Debug\EntityFramework.SqlServer.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\bin\Debug\EntityFramework.xml
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\bin\Debug\EntityFramework.SqlServer.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\obj\Debug\ORM.EF.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\obj\Debug\ORM.EF.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\obj\Debug\ORM.EF.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\obj\Debug\ORM.EF.pdb
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.ORM\obj\Debug\ORM.EF.csprojResolveAssemblyReference.cache
