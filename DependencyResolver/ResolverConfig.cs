@@ -2,11 +2,11 @@
 using BLL.Interface;
 using DAL;
 using DAL.DB;
+using DAL.DB.Repositories;
 using DAL.Fake;
 using DAL.Interface;
-using Ninject;
 using DAL.Interface.Interfaces;
-using DAL.DB.Repositories;
+using Ninject;
 
 namespace DependencyResolver
 {
@@ -14,17 +14,11 @@ namespace DependencyResolver
     {
         public static void ConfigurateResolver(this IKernel kernel)
         {
-            kernel.Bind<IBonusPointsCalculator>().To<BonusCalculator>();
+            kernel.Bind<IBonusPointsCalculator>().To<BonusCalculator>().InSingletonScope();
             kernel.Bind<IIBANGenerator>().To<IBANGenerator>().InSingletonScope();
-
-            // kernel.Bind<IAccountStorage>().To<BinaryFileStorage>().WithConstructorArgument("test.bin");
-            //kernel.Bind<IAccountRepository>().To<ListRepository>();
-            kernel.Bind<IAccountsRepository>().To<AccountsDBRepository>();
-            kernel.Bind<IAccountsUnitOfWork>().To<AccountsEFUnitOfWork>();
-            //kernel.Bind<IUsersRepository>().To<UsersDBRepository>();
+            kernel.Bind<IAccountsRepository>().To<AccountsRepository>();
+            kernel.Bind<IAccountsUnitOfWork>().To<AccountsUnitOfWork>();
             kernel.Bind<IAccountService>().To<Bank>();
-         
-            // kernel.Bind<IApplicationSettings>().To<ApplicationSettings>();
         }
     }
 }

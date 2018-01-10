@@ -9,6 +9,7 @@ namespace DAL.Interface.Interfaces
     public interface IAccountsUnitOfWork
     {
         IAccountsRepository Accounts { get; }
+
         void Save();
     }
 }

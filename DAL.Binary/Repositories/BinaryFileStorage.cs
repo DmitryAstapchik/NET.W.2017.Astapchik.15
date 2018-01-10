@@ -75,10 +75,10 @@ namespace DAL.Binary
                 var bonus = reader.ReadSingle();
                 var type = reader.ReadString();
                 account = new BankAccountDTO(
-                    iban, 
-                    new AccountOwnerDTO { Email = owner, FullName = owner, PassportID = owner }, 
-                    balance, 
-                    bonus, 
+                    iban,
+                    new AccountOwnerDTO(owner, owner, owner),
+                    balance,
+                    bonus,
                     (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), type));
             }
 

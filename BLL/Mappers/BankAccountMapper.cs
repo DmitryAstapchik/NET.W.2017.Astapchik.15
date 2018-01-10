@@ -23,7 +23,7 @@ namespace BLL
         {
             return (BankAccount)Activator.CreateInstance(
                 Assembly.GetAssembly(typeof(BankAccount)).GetType("BLL.Interface." + dto.Type.ToString()),
-                new object[] { dto.IBAN, new AccountOwner(dto.Owner.PassportID, dto.Owner.FullName, dto.Owner.Email), dto.Balance, dto.BonusPoints, (BankAccount.BankAccountStatus)(int)dto.Status });
+                new object[] { dto.IBAN, dto.Owner.FromDTO(), dto.Balance, dto.BonusPoints, (BankAccount.BankAccountStatus)(int)dto.Status });
         }
 
         /// <summary>
@@ -35,11 +35,13 @@ namespace BLL
         {
             return new BankAccountDTO(
                 account.IBAN,
-                new AccountOwnerDTO { PassportID = account.Owner.PassportID, FullName = account.Owner.FullName, Email = account.Owner.Email },
+                account.Owner.ToDTO(),
                 account.Balance,
                 account.BonusPoints,
                 (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), account.GetType().Name))
-            { Status = (BankAccountDTO.AccountStatus)(int)account.Status };
+            {
+                Status = (BankAccountDTO.AccountStatus)(int)account.Status
+            };
         }
     }
 }

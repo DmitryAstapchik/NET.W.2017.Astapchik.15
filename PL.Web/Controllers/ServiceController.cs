@@ -19,27 +19,22 @@ namespace PL.WebApplication.Controllers
     [Authenticate]
     public class ServiceController : Controller
     {
-        private IAccountService service;
+        private static IAccountService service;
         IUsersRepository usersRepo;
         //BLL.Interface.AccountOwner user;
 
         public ServiceController(IUsersRepository repo)
         {
-            var kernel = new StandardKernel();
-            //kernel.Unbind<ModelValidatorProvider>();
-            kernel.ConfigurateResolver();
-            service = kernel.Get<IAccountService>();
             usersRepo = repo;
-            //user = usersRepo.GetByEmail(User.Identity.Name);
         }
 
-        //static ServiceController()
-        //{
-        //    var kernel = new StandardKernel();
-        //    kernel.ConfigurateResolver();
-        //    service = kernel.Get<IAccountService>();
-        //}
-
+        static ServiceController()
+        {
+            var kernel = new StandardKernel();
+            kernel.Unbind<ModelValidatorProvider>();
+            kernel.ConfigurateResolver();
+            service = kernel.Get<IAccountService>();
+        }
 
         public ActionResult Index()
         {
@@ -140,7 +135,7 @@ namespace PL.WebApplication.Controllers
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
             }
-          
+
             if (ModelState.IsValid)
             {
                 account = service.GetPersonalAccounts(usersRepo.GetByEmail(User.Identity.Name)).Single(a => a.IBAN == account.IBAN);
@@ -194,6 +189,37 @@ namespace PL.WebApplication.Controllers
         }
 
         [HttpPost]
+        public ActionResult TransferToAnothers(string fromIBAN)
+        {
+            var user = usersRepo.GetByEmail(User.Identity.Name);
+            //ViewBag.Accounts = service.GetPersonalAccounts(user).Where(a => a.IBAN != fromIBAN).Select(a => (Models.BankAccount)a).ToArray();
+            Models.BankAccount acc = service.GetPersonalAccounts(user).Single(a => a.IBAN == fromIBAN);
+            return View(acc);
+        }
+
+        public ActionResult GetAnothersAccount(string iban, string fromIBAN)
+        {
+            var acc = service.GetAccount(iban);
+            if (acc == null)
+            {
+                return Content($"<i class='text-danger'>IBAN {iban} was not found.</i>");
+            }
+            else
+            {
+                if (acc.Owner.Email == User.Identity.Name)
+                {
+                    return Content("<i class='text-danger'>It is your own account.</i>");
+                }
+                else
+                {
+                    ViewBag.toIBAN = iban;
+                    ViewBag.fromIBAN = fromIBAN;
+                    return PartialView("_TransferToAnothersAmount", acc.Owner.FullName);
+                }
+            }
+        }
+
+        [HttpPost]
         public ActionResult MakeTransfer(string fromIBAN, string toIBAN, decimal amount)
         {
             //service.MakeWithdrawal(fromIBAN, amount);
@@ -220,7 +246,6 @@ namespace PL.WebApplication.Controllers
             return View();
         }
 
-        //[ConfirmCreate]
         [ActionName("create")]
         [HttpPost]
         public ActionResult CreateAccount(Models.NewAccount account)

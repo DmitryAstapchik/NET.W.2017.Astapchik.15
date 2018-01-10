@@ -13,6 +13,7 @@ namespace PL.WebApplication.Controllers
     public class UsersController : Controller
     {
         IUsersRepository repository;
+
         public UsersController(IUsersRepository repo)
         {
             this.repository = repo;
@@ -20,7 +21,6 @@ namespace PL.WebApplication.Controllers
 
 
         [HttpGet]
-       // [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -28,7 +28,6 @@ namespace PL.WebApplication.Controllers
         }
 
         [HttpPost]
-       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginData data, string returnUrl)
         {
@@ -70,7 +69,6 @@ namespace PL.WebApplication.Controllers
 
 
         [HttpPost]
-       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegistrationData data)
         {

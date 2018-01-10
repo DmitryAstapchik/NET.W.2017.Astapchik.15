@@ -14,8 +14,11 @@ namespace BLL.Interface
             FullName = name;
             Email = email;
         }
+
         public string PassportID { get; set; }
+
         public string FullName { get; set; }
+
         public string Email { get; set; }
     }
 }

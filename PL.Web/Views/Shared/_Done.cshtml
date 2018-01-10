@@ -1,11 +1,9 @@
 ﻿@model PL.WebApplication.Models.BankAccount
 
 <div class="alert alert-success " role="alert">
-   <strong class="alert-heading h5">@ViewBag.Message</strong> 
+   <strong class="alert-heading h4">@ViewBag.Message</strong> 
 </div>
 @Html.Partial("_AccountInfo", Model)
 
-@Html.Partial("_BackLink")
-<br />
-<br />
-@Html.Partial("_HomeLink")
+<p>@Html.Partial("_BackLink")</p> 
+<p>@Html.Partial("_HomeLink")</p> 

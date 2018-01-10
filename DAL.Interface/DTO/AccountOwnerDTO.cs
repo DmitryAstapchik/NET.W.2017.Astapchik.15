@@ -8,15 +8,17 @@ namespace DAL.Interface
 {
     public class AccountOwnerDTO
     {
-        //public OwnerDTO(string pid, string name, string email)
-        //{
-        //    PassportID = pid;
-        //    FullName = name;
-        //    Email = email;
-        //}
+        public AccountOwnerDTO(string pid, string name, string email)
+        {
+            PassportID = pid;
+            FullName = name;
+            Email = email;
+        }
 
         public string PassportID { get; set; }
+
         public string FullName { get; set; }
+
         public string Email { get; set; }
     }
 }

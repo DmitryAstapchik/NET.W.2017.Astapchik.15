@@ -5,6 +5,7 @@
 
 @Html.Partial("_PageHeader", "Deposit to account")
 
+<u class="h6 ">Deposit to:</u>
 @Html.Partial("_AccountInfo", Model)
 
 @Html.ValidationSummary(true, null, new { @class = "text-danger" })
@@ -12,13 +13,12 @@
 {
     <div class="form-group">
         <label for="amount" class="form-text ">Deposit amount:</label>
-        <input name="amount" id="amount" class="form-control mx-2" type="number" required min="1" />
-        <button type="button" class="btn btn-primary mr-2" data-toggle="modal_" data-target="#myModal">Deposit</button>
+        <input name="amount" id="amount" class="form-control mx-2" type="number" required min="1" max="1000000"/>
+        <button type="button" class="btn btn-primary mr-2" data-toggle="modal_" data-target="#myModal" id="deposit">Deposit</button>
     </div>
-    @Html.ValidationMessage("deposit amount", new { @class = "text-danger" })
-    @Html.Partial("_Modal", Model)
+    @Html.ValidationMessage("deposit amount", new { @class = "text-danger " })
+    @Html.Partial("_AccountModal", Model)
 }
-
 
 @{
     ViewBag.Action = "deposit";
@@ -33,14 +33,14 @@
 
         <script>
             $(function () {
-                $("button").click(function () {
+                $("#deposit").click(function () {
                     if ($("form")[0].checkValidity()) {
                         var amount = $("#amount").val();
                         $(".modal-title").text("Deposit " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " to this account?");
-                        $("#myModal").modal();
+                        $("#accountModal").modal();
                     }
                     else {
-                        $('<input type="submit">').hide().appendTo($("form")).click().remove();
+                        $(':submit').click();
                     }
                 });
             });

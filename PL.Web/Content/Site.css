@@ -23,6 +23,10 @@ textarea {
     max-width: 280px;
 }
 
+caption{
+    caption-side: initial;
+}
+
 .field-validation-error {
     /*color: red;*/
 }

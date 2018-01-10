@@ -22,7 +22,6 @@ namespace BLL.Interface
         /// Bonus points of an account.
         /// </summary>
         private float bonusPoints;
-
         #endregion
 
         #region constructors
@@ -33,16 +32,11 @@ namespace BLL.Interface
         /// <param name="owner">owner</param>
         /// <param name="balance">balance</param>
         /// <param name="bonusPoints">bonus points</param>
-        protected BankAccount(string iban, AccountOwner owner, decimal balance, float bonusPoints, BankAccountStatus status )
+        protected BankAccount(string iban, AccountOwner owner, decimal balance, float bonusPoints, BankAccountStatus status)
         {
             if (string.IsNullOrWhiteSpace(iban))
             {
                 throw new ArgumentException("String is not significant.", nameof(iban));
-            }
-
-            if (owner == null)
-            {
-                throw new ArgumentNullException(nameof(owner));
             }
 
             if (bonusPoints < 0 || bonusPoints > MaxBonusPoints)
@@ -51,14 +45,22 @@ namespace BLL.Interface
             }
 
             this.IBAN = iban;
-            this.Owner = owner;
+            this.Owner = owner ?? throw new ArgumentNullException(nameof(owner));
             this.Balance = balance;
             this.BonusPoints = bonusPoints;
             this.Status = status;
         }
         #endregion
 
+        public enum BankAccountStatus
+        {
+            Active,
+            Inactive
+        }
+
         #region properties
+        public static IBonusPointsCalculator Calculator { get; set; }
+
         /// <summary>
         /// International Bank Account Number of an account.
         /// </summary>
@@ -85,24 +87,15 @@ namespace BLL.Interface
 
         public BankAccountStatus Status { get; private set; }
 
-        public enum BankAccountStatus
-        {
-            Active ,
-            Inactive
-        }
-
         /// <summary>
         /// 'value' of a balance
         /// </summary>
-        protected internal  byte BalanceValue { get; protected set; }
+        protected internal byte BalanceValue { get; protected set; }
 
         /// <summary>
         /// 'value' of a deposit
         /// </summary>
-        protected internal  byte DepositValue { get; protected set; }
-
-        //public IBonusPointsCalculator Calculator { get; set; }
-
+        protected internal byte DepositValue { get; protected set; }
         #endregion
 
         #region methods
@@ -119,19 +112,19 @@ namespace BLL.Interface
         {
             if (amount <= 0)
             {
-                throw new ArgumentException("deposit amount should be greater than zero");
+                throw new ArgumentException("deposit amount must be greater than zero");
             }
 
             Balance += amount;
-            //BonusPoints += Calculator.CalculateDepositBonus(this, amount);
+            BonusPoints += Calculator.CalculateDepositBonus(this, amount);
             return Balance;
         }
 
-       public decimal Withdraw(decimal amount)
+        public decimal Withdraw(decimal amount)
         {
             if (amount <= 0)
             {
-                throw new ArgumentException("withdraw amount should be greater than zero");
+                throw new ArgumentException("withdraw amount must be greater than zero");
             }
 
             if (Balance < amount)
@@ -140,7 +133,7 @@ namespace BLL.Interface
             }
 
             Balance -= amount;
-            //BonusPoints -= Calculator.CalculateWithdrawalBonus(this, amount);
+            BonusPoints -= Calculator.CalculateWithdrawalBonus(this, amount);
             return Balance;
         }
         #endregion

@@ -54,7 +54,7 @@
     <Compile Include="Mappers\AccountOwnerMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountsRepository.cs" />
-    <Compile Include="Repositories\AccountsEFUnitOfWork.cs" />
+    <Compile Include="Repositories\AccountsUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">

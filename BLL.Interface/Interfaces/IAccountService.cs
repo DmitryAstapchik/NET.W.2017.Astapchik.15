@@ -41,5 +41,7 @@ namespace BLL.Interface
         void MakeTransfer(string fromIBAN, string toIBAN, decimal amount);
 
         IEnumerable<BankAccount> GetPersonalAccounts(AccountOwner owner);
+
+        BankAccount GetAccount(string iban);
     }
 }

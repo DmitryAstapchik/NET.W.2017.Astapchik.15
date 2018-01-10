@@ -7,11 +7,9 @@
                 <h4 class="modal-title ">@ViewBag.ModalTitle</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
-
             <div class="modal-body">
                 @Html.Partial("_AccountInfo", Model)
             </div>
-
             <div class="modal-footer" style="text-align:center">
                 <button type="submit" class="btn btn-primary w-25" value="@Model.IBAN" name="iban">Yes</button>
                 <button type="button" class="btn btn-secondary w-25" data-dismiss="modal">No</button>

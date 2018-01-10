@@ -1,0 +1,35 @@
+﻿@model PL.WebApplication.Models.BankAccount
+
+@{
+    ViewBag.Title = "TransferToAnother";
+}
+
+@Html.Partial("_PageHeader", "Transfer to another's account")
+
+<u class="h6">Transfer from:</u>
+@Html.Partial("_AccountInfo", Model)
+
+<hr />
+
+<u class="h6">Transfer to:</u>
+<div class="container">
+    @using (Ajax.BeginForm("GetAnothersAccount", null, new AjaxOptions { UpdateTargetId = "response" }, new { @class = "my-2" }))
+    {
+        <div class="form-group row">
+            @Html.Hidden("fromIBAN", Model.IBAN)
+            <label for="iban" class="form-text">IBAN:</label>
+            <input class="form-control mx-2" id="iban" name="iban" required />
+            <button type="submit" class="btn btn-primary">Find</button>
+        </div>
+    }
+
+    <div id="response"></div>
+</div>
+
+
+@Scripts.Render("~/scripts/jquery-3.0.0.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+
+@section Scripts{
+  
+}

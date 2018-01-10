@@ -11,9 +11,9 @@ namespace DAL.Fake
     {
         private List<BankAccountDTO> storage = new List<BankAccountDTO>
         {
-            new BankAccountDTO( "111", new AccountOwnerDTO{PassportID = "pass1", FullName = "owner1", Email = "email1" }, 100,23.34f,BankAccountDTO.AccountType.GoldAccount ),
-            new BankAccountDTO("222", new AccountOwnerDTO{PassportID = "pass2", FullName = "owner2", Email = "email2" }, 200, 0.55f, BankAccountDTO.AccountType.PlatinumAccount),
-            new BankAccountDTO("123", new AccountOwnerDTO{PassportID = "pass1", FullName = "owner1", Email = "email1" }, 300, 34.34f, BankAccountDTO.AccountType.StandardAccount)
+            new BankAccountDTO( "111", new AccountOwnerDTO("pass1", "owner1", "email1" ), 100,23.34f,BankAccountDTO.AccountType.GoldAccount ),
+            new BankAccountDTO("222", new AccountOwnerDTO( "pass2",  "owner2",  "email2" ), 200, 0.55f, BankAccountDTO.AccountType.PlatinumAccount),
+            new BankAccountDTO("123", new AccountOwnerDTO( "pass1", "owner1",  "email1" ), 300, 34.34f, BankAccountDTO.AccountType.StandardAccount)
         };
 
         public void Create(BankAccountDTO account)

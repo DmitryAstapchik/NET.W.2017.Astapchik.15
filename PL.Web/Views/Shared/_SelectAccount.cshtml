@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PL.WebApplication.Models.BankAccount>
 
 <table class="table table-bordered table-hover table-sm ">
-    <caption >My accounts</caption>
+    <caption>My accounts</caption>
     <thead class="thead-dark">
         <tr>
             <th class="text-center">IBAN</th>
@@ -15,7 +15,7 @@
         @if (Model.Count() == 0)
         {
             <tr>
-                <td colspan="5" class="text-center">You have no accounts</td>
+                <td colspan="5" class="text-center">No accounts to display</td>
             </tr>
         }
         @foreach (var acc in Model)
@@ -46,8 +46,8 @@
                                     Transfer
                                 </button>
                                 <div class="dropdown-menu">
-                                    <button class="dropdown-item btn" formaction="@Url.Action("TransferToMy")" type="submit" name="fromIBAN" value="@acc.IBAN">To my account</button>
-                                    <button class="dropdown-item" href="#">To another's account</button>
+                                    <button class="dropdown-item btn " formaction="@Url.Action("TransferToMy")" type="submit" name="fromIBAN" value="@acc.IBAN">To my account</button>
+                                    <button class="dropdown-item btn" formaction="@Url.Action("TransferToAnothers")" type="submit" name="fromIBAN" value="@acc.IBAN">To another's account</button>
                                 </div>
                             </div>
                         }
@@ -56,7 +56,7 @@
                         {
                             @*<button type="button" class="btn btn-outline-primary btn-block " data-toggle="modal" data-target="#myModal">Close</button>*@
                             @*{ ViewBag.ModalTitle = "Close this account?"; }
-                            @Html.Partial("_Modal", acc)*@
+                                @Html.Partial("_Modal", acc)*@
                             <button type="submit" value="@acc.IBAN" name="iban" class="btn btn-outline-primary btn-block ">Close</button>
                         }
 

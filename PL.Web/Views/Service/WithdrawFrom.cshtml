@@ -5,22 +5,20 @@
 
 @Html.Partial("_PageHeader", "Withdraw from account")
 
+<u class="h6 ">Withdraw from:</u>
 @Html.Partial("_AccountInfo", Model)
 
-@Html.ValidationSummary(false, null, new { @class = "text-danger" })
-
+@Html.ValidationSummary(true, null, new { @class = "text-danger" })
 @using (Html.BeginForm("MakeWithdrawal", "Service", Model, FormMethod.Post, new { @class = "form-inline" }))
 {
     <div class="form-group">
-        <label for="amount">Withdrawal amount:</label>
-        <input name="amount" id="amount" class="form-control mx-2 "  type="number" required min="1"/>
-        <button type="button" class="btn btn-primary" data-toggle="modal_" data-target="#myModal">Withdraw</button>
+        <label for="amount" class="form-text">Withdrawal amount:</label>
+        <input name="amount" id="amount" class="form-control mx-2 " type="number" required min="1" max="1000000"/>
+        <button type="button" class="btn btn-primary" data-toggle="modal_" data-target="#myModal" id="withdraw">Withdraw</button>
     </div>
 
-    @Html.Partial("_Modal", Model)
+    @Html.Partial("_AccountModal", Model)
 }
-
-@*@Html.ValidationMessage("withdrawal amount", new { @class = "text-danger"})*@
 
 @{
     ViewBag.Action = "withdraw";
@@ -31,17 +29,18 @@
 
 @section Scripts
 {
+    @Scripts.Render("~/bundles/jqueryval")
+
     <script>
         $(function () {
-            $("button").click(function () {
+            $('#withdraw').click(function () {
                 if ($("form")[0].checkValidity()) {
                     var amount = $("#amount").val();
                     $(".modal-title").text("Withdraw " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " from this account?");
-                    $("#myModal").modal();
+                    $("#accountModal").modal();
                 }
                 else {
-                    $('<input type="submit">').hide().appendTo($("form")).click().remove();
-                    //$('#amount').addClass("is-invalid");
+                    $(':submit').click();
                 }
             });
         });

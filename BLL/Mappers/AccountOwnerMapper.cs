@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLL.Interface;
 using DAL.Interface;
-using ORM.EF;
 
-namespace DAL.DB
+namespace BLL
 {
-    public static class AccountOwnerMapper
+    internal static class AccountOwnerMapper
     {
         public static AccountOwner FromDTO(this AccountOwnerDTO dto)
         {
-            return new AccountOwner() { Email = dto.Email, FullName = dto.FullName, PassportID = dto.PassportID };
+            return new AccountOwner(dto.PassportID, dto.FullName, dto.Email);
         }
 
         public static AccountOwnerDTO ToDTO(this AccountOwner owner)

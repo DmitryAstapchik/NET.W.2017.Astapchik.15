@@ -24,11 +24,6 @@ namespace BLL
         private const ushort MinWithdrawal = 10;
 
         /// <summary>
-        /// bonus points calculator
-        /// </summary>
-        private IBonusPointsCalculator bonusCalculator;
-
-        /// <summary>
         /// Bank's IBAN generator
         /// </summary>
         private IIBANGenerator ibanGenerator;
@@ -47,7 +42,7 @@ namespace BLL
         {
             this.accountsRepo = uow;
             this.ibanGenerator = ibanGenerator;
-            this.bonusCalculator = calculator;
+            BankAccount.Calculator = calculator;
         }
 
         /// <summary>
@@ -70,9 +65,14 @@ namespace BLL
             return acc.Balance;
         }
 
+        public BankAccount GetAccount(string iban)
+        {
+            return accountsRepo.Accounts.GetByIban(iban)?.FromDTO();
+        }
+
         public IEnumerable<BankAccount> GetPersonalAccounts(AccountOwner owner)
         {
-            var accounts = this.accountsRepo.Accounts.GetByOwner(new AccountOwnerDTO { PassportID = owner.PassportID, FullName = owner.FullName, Email = owner.Email });
+            var accounts = this.accountsRepo.Accounts.GetByOwner(owner.ToDTO());
             if (accounts != null)
             {
                 foreach (var account in accounts)
@@ -103,7 +103,6 @@ namespace BLL
 
             var account = accountsRepo.Accounts.GetByIban(iban).FromDTO();
             account.Deposit(amount);
-            account.BonusPoints += bonusCalculator.CalculateDepositBonus(account, amount);
             accountsRepo.Accounts.Update(account.ToDTO());
             accountsRepo.Save();
 
@@ -148,7 +147,6 @@ namespace BLL
             }
 
             account.Withdraw(amount);
-            account.BonusPoints -= bonusCalculator.CalculateWithdrawalBonus(account, amount);
             accountsRepo.Accounts.Update(account.ToDTO());
             accountsRepo.Save();
 
@@ -168,11 +166,6 @@ namespace BLL
             {
                 throw new ArgumentNullException(nameof(owner));
             }
-
-            //if (startBalance < MinDeposit)
-            //{
-            //    throw new ArgumentException($"Cannot create a bank account with balance lesser than {MinDeposit}");
-            //}
 
             BankAccount account;
             if (startBalance < 1000)

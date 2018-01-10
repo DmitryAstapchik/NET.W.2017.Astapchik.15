@@ -12,6 +12,11 @@ namespace DAL.DB
     {
         public static BankAccount FromDTO(this BankAccountDTO dto)
         {
+            if (dto == null)
+            {
+                return null;
+            }
+
             return new BankAccount
             {
                 AccountType = dto.Type.ToString(),
@@ -19,7 +24,6 @@ namespace DAL.DB
                 BonusPoints = dto.BonusPoints,
                 IBAN = dto.IBAN,
                 OwnerPID = dto.Owner.PassportID,
-                //Owner = new AccountOwner { FullName = dto.Owner.FullName, PassportID = dto.Owner.PassportID, Email = dto.Owner.Email },
                 Status = dto.Status.ToString()
             };
         }
@@ -33,11 +37,13 @@ namespace DAL.DB
 
             return new BankAccountDTO(
                 account.IBAN,
-                new AccountOwnerDTO { PassportID = account.Owner.PassportID, FullName = account.Owner.FullName, Email = account.Owner.Email },
+                new AccountOwnerDTO(account.Owner.PassportID, account.Owner.FullName, account.Owner.Email),
                 account.Balance,
                 account.BonusPoints,
                 (BankAccountDTO.AccountType)Enum.Parse(typeof(BankAccountDTO.AccountType), account.AccountType))
-            { Status = (BankAccountDTO.AccountStatus)Enum.Parse(typeof(BankAccountDTO.AccountStatus), account.Status, true) };
+            {
+                Status = (BankAccountDTO.AccountStatus)Enum.Parse(typeof(BankAccountDTO.AccountStatus), account.Status, true)
+            };
         }
     }
 }

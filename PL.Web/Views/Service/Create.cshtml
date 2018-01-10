@@ -9,12 +9,12 @@
 {
     @Html.ValidationSummary(true, null, new { @class = "text-danger" })
     <div class="form-group ">
-        @Html.LabelFor(m => m.Type)
-        @Html.EnumDropDownListFor(m => m.Type, new { @class = "form-control", id = "type" })
+        @Html.LabelFor(m => m.Type, new { @class = "form-text" })
+        @Html.EnumDropDownListFor(m => m.Type, new { @class = "form-control custom-select", id = "Type" })
     </div>
     <div class="form-group ">
-        @Html.LabelFor(m => m.StartBalance)
-        @Html.EditorFor(m => m.StartBalance, new { htmlAttributes = new { @class = "form-control ", id = "balance", type = "number", required = "", min = "0", max = "1000000" } })
+        @Html.LabelFor(m => m.StartBalance, new { @class = "form-text" })
+        @Html.EditorFor(m => m.StartBalance, new { htmlAttributes = new { @class = "form-control ", id = "StartBalance", type = "number", required = "", min = "0", max = "1000000" } })
         @Html.ValidationMessageFor(m => m.StartBalance, null, new { @class = "text-danger" })
     </div>
 
@@ -30,18 +30,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="card border-info ">
-                        <div class="card-header h4 text-info">New account</div>
-                        <div class="card-body text-info">
-                            <div class="card-text">
-                                @Html.LabelFor(m => m.Type, new { @class = "font-weight-bold" }):
-                                <label id="typeVal"></label>
-                                <br />
-                                @Html.LabelFor(m => m.StartBalance, new { @class = "font-weight-bold" }):
-                                <label id="balanceVal"></label>
-                            </div>
-                        </div>
-                    </div>
+                    @Html.Partial("_NewAccountInfo", Model)
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary w-25">Yes</button>
@@ -66,11 +55,11 @@
             $('#create').click(function () {
                 if ($('form')[0].checkValidity()) {
 
-                    var type = $("#type option:selected").text();
+                    var type = $("#Type option:selected").text();
                     $("#typeVal").text(type);
 
-                    var balance = $("#balance").val();
-                    $("#balanceVal").text(balance);
+                    var balance = $("#StartBalance").val();
+                    $("#balanceVal").text(parseInt(balance).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
 
                     $("#createModal").modal();
                 }

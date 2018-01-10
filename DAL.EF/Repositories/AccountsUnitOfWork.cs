@@ -9,17 +9,17 @@ using ORM.EF;
 
 namespace DAL.DB.Repositories
 {
-    public class AccountsEFUnitOfWork : IAccountsUnitOfWork
+    public class AccountsUnitOfWork : IAccountsUnitOfWork
     {
         private AccountModelContainer context;
-        private AccountsDBRepository accountsRepo;
+        private AccountsRepository accountsRepo;
 
-        public AccountsEFUnitOfWork()
+        public AccountsUnitOfWork()
         {
             context = new AccountModelContainer();
         }
 
-        public IAccountsRepository Accounts => accountsRepo ?? (accountsRepo = new AccountsDBRepository(context));
+        public IAccountsRepository Accounts => accountsRepo ?? (accountsRepo = new AccountsRepository(context));
 
         public void Save()
         {
