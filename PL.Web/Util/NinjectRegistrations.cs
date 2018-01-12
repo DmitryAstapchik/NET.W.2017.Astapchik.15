@@ -12,7 +12,7 @@ namespace PL.Web.Util
     {
         public override void Load()
         {
-            Bind<IUsersRepository>().To<UsersDBRepository>();
+            Bind<IUsersRepository>().To<UsersRepository>();
         }
     }
 }

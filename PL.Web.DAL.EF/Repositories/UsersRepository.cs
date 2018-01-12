@@ -8,8 +8,15 @@ using PL.Web.DAL.Interface.Interfaces;
 
 namespace PL.Web.DAL.EF
 {
-    public class UsersDBRepository : IUsersRepository
+    /// <summary>
+    /// users DB repository
+    /// </summary>
+    public class UsersRepository : IUsersRepository
     {
+        /// <summary>
+        /// adds new user to repo
+        /// </summary>
+        /// <param name="user">user to add</param>
         public void Create(UserDTO user)
         {
             using (var context = new UsersContainer())
@@ -19,6 +26,10 @@ namespace PL.Web.DAL.EF
             }
         }
 
+        /// <summary>
+        /// delete user from repo
+        /// </summary>
+        /// <param name="user">user to delete</param>
         public void Delete(UserDTO user)
         {
             using (var context = new UsersContainer())
@@ -28,6 +39,11 @@ namespace PL.Web.DAL.EF
             }
         }
 
+        /// <summary>
+        /// get user by his e-mail
+        /// </summary>
+        /// <param name="email">user's e-mail</param>
+        /// <returns>user DTO</returns>
         public UserDTO GetByEmail(string email)
         {
             using (var context = new UsersContainer())
@@ -36,6 +52,10 @@ namespace PL.Web.DAL.EF
             }
         }
 
+        /// <summary>
+        /// updates user in repo
+        /// </summary>
+        /// <param name="user">updated user</param>
         public void Update(UserDTO user)
         {
             using (var context = new UsersContainer())
