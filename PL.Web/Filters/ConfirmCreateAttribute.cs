@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace PL.WebApplication.Filters
+namespace PL.Web.Filters
 {
     public class ConfirmCreateAttribute : FilterAttribute, IActionFilter
     {

@@ -7,13 +7,13 @@ using System.Web.Routing;
 using BLL.Interface;
 using DependencyResolver;
 using Ninject;
-using PL.WebApplication.Filters;
-using PL.WebApplication.Models;
+using PL.Web.Filters;
+using PL.Web.Models;
 using System.Web.Security;
 using System.Security.Principal;
-using PL.WebApplication.DAL.Interface;
+using PL.Web.DAL.Interface.Interfaces;
 
-namespace PL.WebApplication.Controllers
+namespace PL.Web.Controllers
 {
     //[HandleError(ExceptionType = typeof(Exception), View = "Error")]
     [Authenticate]

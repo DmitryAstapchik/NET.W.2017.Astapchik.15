@@ -5,7 +5,7 @@ using System.Web;
 //using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace PL.WebApplication.Models
+namespace PL.Web.Models
 {
     public class RegistrationData
     {

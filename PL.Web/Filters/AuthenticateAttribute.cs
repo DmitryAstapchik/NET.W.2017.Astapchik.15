@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
 
-namespace PL.WebApplication.Filters
+namespace PL.Web.Filters
 {
     public class AuthenticateAttribute : FilterAttribute, IAuthenticationFilter
     {

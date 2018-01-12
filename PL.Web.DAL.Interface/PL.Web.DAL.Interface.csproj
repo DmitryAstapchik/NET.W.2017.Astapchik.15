@@ -7,8 +7,8 @@
     <ProjectGuid>{608BBFCB-5C39-40D6-840C-2F71973110B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PL.DAL.Interface</RootNamespace>
-    <AssemblyName>PL.DAL.Interface</AssemblyName>
+    <RootNamespace>PL.Web.DAL.Interface</RootNamespace>
+    <AssemblyName>PL.Web.DAL.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace PL.WebApplication.Infrastructure
+namespace PL.Web.Infrastructure
 {
     public class MinDepositAttribute : ValidationAttribute
     {

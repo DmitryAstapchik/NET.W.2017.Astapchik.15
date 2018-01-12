@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace PL.WebApplication
+namespace PL.Web
 {
     public class BundleConfig
     {

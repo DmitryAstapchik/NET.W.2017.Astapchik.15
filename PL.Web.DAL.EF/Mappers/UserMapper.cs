@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PL.WebApplication.DAL.Interface;
+using PL.Web.DAL.Interface.DTO;
 
-namespace PL.WebApplication.DAL.EF
+namespace PL.Web.DAL.EF
 {
     public static class UserMapper
     {
         public static User FromDTO(this UserDTO dto)
         {
-            return new User { Email = dto.Email, FullName = dto.FullName, Password = dto.Password, PassportID = dto.PassportID };
+            return new User { Email = dto.Email, FullName = dto.FullName, Password = dto.Password, PassportID = dto.PassportNumber };
         }
 
         public static UserDTO ToDTO(this User user)
@@ -21,7 +21,7 @@ namespace PL.WebApplication.DAL.EF
                 return null;
             }
 
-            return new UserDTO { Email = user.Email, FullName = user.FullName, Password = user.Password, PassportID = user.PassportID };
+            return new UserDTO { Email = user.Email, FullName = user.FullName, Password = user.Password, PassportNumber = user.PassportID };
         }
     }
 }
