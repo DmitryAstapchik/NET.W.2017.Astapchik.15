@@ -86,3 +86,5 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Tests\b
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Tests\bin\Debug\Moq.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Tests\bin\Debug\Moq.xml
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Tests\bin\Debug\nunit.framework.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Tests\bin\Debug\BLL.Tests.dll.CodeAnalysisLog.xml
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Tests\bin\Debug\BLL.Tests.dll.lastcodeanalysissucceeded

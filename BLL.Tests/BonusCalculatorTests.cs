@@ -12,9 +12,10 @@ namespace BLL.Tests
     public class BonusCalculatorTests
     {
         private static IBonusPointsCalculator calculator = new BonusCalculator();
-        private static BankAccount gold = new GoldAccount("iban", "owner", 100, 0);
-        private static BankAccount platinum = new PlatinumAccount("iban", "owner", 100, 0);
-        private static BankAccount standard = new StandardAccount("iban", "owner", 100, 0);
+        private static AccountOwner owner = new AccountOwner("pid", "name", "email");
+        private static BankAccount gold = new GoldAccount("iban", owner, 100, 0);
+        private static BankAccount platinum = new PlatinumAccount("iban", owner, 100, 0);
+        private static BankAccount standard = new StandardAccount("iban", owner, 100, 0);
 
         [Test]
         public void CalculateDepositPointsTest()

@@ -270,10 +270,9 @@
     <Content Include="Views\Service\Created.cshtml" />
     <Content Include="Views\Service\AccountsList.cshtml" />
     <Content Include="Views\Shared\_AccountModal.cshtml" />
-    <Content Include="Views\Shared\CreateModal.cshtml" />
+    <Content Include="Views\Shared\_CreateModal.cshtml" />
     <Content Include="Views\Shared\_Done.cshtml" />
     <Content Include="Views\Service\Transfer.cshtml" />
-    <Content Include="Views\Service\TransferBetween.cshtml" />
     <Content Include="Views\Shared\TransferModal.cshtml" />
     <Content Include="Views\Service\TransferMade.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
@@ -294,7 +293,6 @@
     <Content Include="Views\Shared\_NewAccountModal.cshtml" />
     <Content Include="Views\Service\TransferToMy.cshtml" />
     <Content Include="Views\Service\TransferToMyAmount.cshtml" />
-    <Content Include="Views\Shared\_NewAccountInfo.cshtml" />
     <Content Include="Views\Service\TransferToAnothers.cshtml" />
     <Content Include="Views\Shared\_TransferToAnothersAmount.cshtml" />
   </ItemGroup>

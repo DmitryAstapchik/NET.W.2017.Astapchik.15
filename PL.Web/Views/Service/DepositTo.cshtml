@@ -13,7 +13,7 @@
 {
     <div class="form-group">
         <label for="amount" class="form-text ">Deposit amount:</label>
-        <input name="amount" id="amount" class="form-control mx-2" type="number" required min="1" max="1000000"/>
+        <input name="amount" id="amount" class="form-control mx-2" type="number" required min="1" max="1000000" />
         <button type="button" class="btn btn-primary mr-2" data-toggle="modal_" data-target="#myModal" id="deposit">Deposit</button>
     </div>
     @Html.ValidationMessage("deposit amount", new { @class = "text-danger " })
@@ -31,18 +31,18 @@
 {
     @Scripts.Render("~/bundles/jqueryval")
 
-        <script>
-            $(function () {
-                $("#deposit").click(function () {
-                    if ($("form")[0].checkValidity()) {
-                        var amount = $("#amount").val();
-                        $(".modal-title").text("Deposit " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " to this account?");
-                        $("#accountModal").modal();
-                    }
-                    else {
-                        $(':submit').click();
-                    }
-                });
+    <script>
+        $(function () {
+            $("#deposit").click(function () {
+                if ($("form")[0].checkValidity()) {
+                    var amount = $("#amount").val();
+                    $(".modal-title").text("Deposit " + parseInt(amount).toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + " to this account?");
+                    $("#accountModal").modal();
+                }
+                else {
+                    $(':submit').click();
+                }
             });
-        </script>
+        });
+    </script>
 }

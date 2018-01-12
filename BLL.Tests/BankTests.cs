@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BLL;
 using BLL.Interface;
 using DAL.Interface;
+using DAL.Interface.Interfaces;
 using Moq;
 using NUnit.Framework;
 
@@ -16,10 +17,11 @@ namespace BLL.Tests
     {
         private static IBonusPointsCalculator calculator = Mock.Of<IBonusPointsCalculator>();
         private static IIBANGenerator generator = Mock.Of<IIBANGenerator>(g => g.GenerateIBAN() == "fake iban");
-        private static Mock<BankAccountDTO> dtoMock = new Mock<BankAccountDTO>("iban", "owner", 22m, 0, BankAccountDTO.AccountType.StandardAccount);
-        private static IAccountsRepository storage = Mock.Of<IAccountsRepository>(st => st.GetByIban(It.IsAny<string>()) == dtoMock.Object);
-        private static Bank bank = new Bank(storage, generator, calculator);
-        private static Mock<IAccountsRepository> storageMock = Mock.Get(storage);
+        private static Mock<BankAccountDTO> dtoMock = new Mock<BankAccountDTO>("iban", new AccountOwnerDTO("pid", "name", "email"), 22m, 0, BankAccountDTO.AccountType.StandardAccount);
+        private static IAccountsRepository repo = Mock.Of<IAccountsRepository>(st => st.GetByIban(It.IsAny<string>()) == dtoMock.Object);
+        private static IAccountsUnitOfWork uow = Mock.Of<IAccountsUnitOfWork>(u => u.Accounts == repo);
+        private static Bank bank = new Bank(uow, generator, calculator);
+        private static Mock<IAccountsRepository> repoMock = Mock.Get(repo);
 
         [Test]
         public void CloseAccountTest()
@@ -29,7 +31,7 @@ namespace BLL.Tests
             Assert.Throws<ArgumentException>(() => bank.CloseAccount(" "));
 
             bank.CloseAccount("iban");
-            storageMock.Verify(st => st.Delete(It.Is<BankAccountDTO>(dto => dto.IBAN == "iban")));
+            repoMock.Verify(r => r.Update(It.Is<BankAccountDTO>(a => a.Status == BankAccountDTO.AccountStatus.Inactive)));
         }
 
         [Test]
@@ -43,7 +45,7 @@ namespace BLL.Tests
             Assert.DoesNotThrow(() => bank.MakeDeposit("55", 50));
 
             Assert.AreEqual(122, bank.MakeDeposit("ss", 100));
-            storageMock.Verify(st => st.Update(It.Is<BankAccountDTO>(dto => dto.Balance == 122)));
+            repoMock.Verify(st => st.Update(It.Is<BankAccountDTO>(dto => dto.Balance == 122)));
         }
 
         [Test]
@@ -59,29 +61,28 @@ namespace BLL.Tests
             Assert.Throws<InvalidOperationException>(() => bank.MakeWithdrawal("ss", 23));
 
             Assert.AreEqual(0, bank.MakeWithdrawal("sss", 22));
-            storageMock.Verify(st => st.Update(It.Is<BankAccountDTO>(dto => dto.Balance == 0)));
+            repoMock.Verify(st => st.Update(It.Is<BankAccountDTO>(dto => dto.Balance == 0)));
         }
 
         [Test]
         public void OpenAccountTest()
         {
-            Assert.Throws<ArgumentException>(() => bank.OpenAccount(string.Empty, 100));
-            Assert.Throws<ArgumentException>(() => bank.OpenAccount(null, 100));
-            Assert.Throws<ArgumentException>(() => bank.OpenAccount(" ", 100));
-            Assert.Throws<ArgumentException>(() => bank.OpenAccount("holder", 49));
-            Assert.DoesNotThrow(() => bank.OpenAccount("holder", 50));
+            var owner = new AccountOwner("pid", "name", "email");
 
-            bank.OpenAccount("holder", 1000);
-            storageMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(StandardAccount).Name)));
+            Assert.Throws<ArgumentNullException>(() => bank.OpenAccount(null, 100));
+            Assert.DoesNotThrow(() => bank.OpenAccount(owner, 50));
 
-            bank.OpenAccount("holder", 1001);
-            storageMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(GoldAccount).Name)));
+            bank.OpenAccount(owner, 1000);
+            repoMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(StandardAccount).Name)));
 
-            bank.OpenAccount("holder", 10000);
-            storageMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(GoldAccount).Name)));
+            bank.OpenAccount(owner, 1001);
+            repoMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(GoldAccount).Name)));
 
-            bank.OpenAccount("holder", 10001);
-            storageMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(PlatinumAccount).Name)));
+            bank.OpenAccount(owner, 10000);
+            repoMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(GoldAccount).Name)));
+
+            bank.OpenAccount(owner, 10001);
+            repoMock.Verify(st => st.Create(It.Is<BankAccountDTO>(acc => acc.Type.ToString() == typeof(PlatinumAccount).Name)));
         }
     }
 }

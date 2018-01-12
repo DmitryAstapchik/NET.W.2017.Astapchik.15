@@ -16,6 +16,6 @@
     @Html.Hidden("fromIBAN", Model[0].IBAN)
     @Html.Hidden("toIBAN", Model[1].IBAN)
     <label class="form-text ">Transfer amount:</label>
-    <input type="number" name="amount" value="" class="form-control mx-2 " required min="1" />
+    <input type="number" name="amount" class="form-control mx-2 " required min="1" />
     <button type="submit" class="btn btn-primary">Transfer</button>
 }

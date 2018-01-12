@@ -3,7 +3,7 @@
     ViewBag.Title = "Login";
 }
 
-@Html.Partial("_PageHeader", "Login")
+@Html.Partial("_PageHeader", "Log in")
 
 @using (Html.BeginForm())
 {
@@ -26,6 +26,6 @@
         </label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary">Log in</button>
     @Html.ActionLink("Register", "register", null, new { @class = "btn btn-link"})
 }

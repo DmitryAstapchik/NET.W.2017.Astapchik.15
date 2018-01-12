@@ -20,7 +20,9 @@
 
     <input type="button" class="btn btn-primary form-control" data-toggle="modal_" data-target="#createModal" value="Create" id="create" />
 
-    <div class="modal" tabindex="-1" role="dialog" id="createModal">
+    @Html.Partial("_NewAccountModal")
+
+    @*<div class="modal" tabindex="-1" role="dialog" id="createModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -38,7 +40,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 }
 
 
