@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PL.Web.DAL.Interface.DTO;
-using PL.Web.DAL.Interface.Interfaces;
+using PL.WebApplication.DAL.Interface.DTO;
+using PL.WebApplication.DAL.Interface.Interfaces;
 
-namespace PL.Web.DAL.EF
+namespace PL.WebApplication.DAL.EF
 {
     /// <summary>
     /// users DB repository

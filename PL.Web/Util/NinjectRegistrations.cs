@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Ninject.Modules;
-using PL.Web.DAL.Interface;
-using PL.Web.DAL.EF;
+using PL.WebApplication.DAL.EF;
+using PL.WebApplication.DAL.Interface.Interfaces;
 
-namespace PL.Web.Util
+namespace PL.WebApplication.Util
 {
     public class NinjectRegistrations : NinjectModule
     {

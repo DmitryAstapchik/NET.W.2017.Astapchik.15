@@ -59,7 +59,8 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyR
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\ORM.EF.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\ORM.EF.dll.config
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\bin\Debug\EntityFramework.xml
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.csprojAssemblyReference.cache
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DependencyResolver\obj\Debug\DependencyResolver.csproj.CopyComplete

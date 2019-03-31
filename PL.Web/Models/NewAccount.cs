@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace PL.Web.Models
+namespace PL.WebApplication.Models
 {
     public class NewAccount : IValidatableObject
     {

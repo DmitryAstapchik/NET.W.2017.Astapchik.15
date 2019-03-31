@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PL.Web.DAL.Interface.DTO;
+using PL.WebApplication.DAL.Interface.DTO;
 
-namespace PL.Web.DAL.Interface.Interfaces
+namespace PL.WebApplication.DAL.Interface.Interfaces
 {
     /// <summary>
     /// web app users repository contract

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PL.Web.DAL.EF
+namespace PL.WebApplication.DAL.EF
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using PL.Web.Models;
+﻿using PL.WebApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,10 @@ using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Security;
-using PL.Web.DAL.Interface;
+using PL.WebApplication.DAL.Interface.Interfaces;
+using PL.WebApplication.DAL.Interface.DTO;
 
-namespace PL.Web.Controllers
+namespace PL.WebApplication.Controllers
 {
     public class UsersController : Controller
     {
@@ -80,7 +81,7 @@ namespace PL.Web.Controllers
                     return View(data);
                 }
 
-                repository.Create(new UserDTO { Email = data.Email, FullName = data.FullName, Password = Crypto.HashPassword(data.Password), PassportID = data.PassportID });
+                repository.Create(new UserDTO { Email = data.Email, FullName = data.FullName, Password = Crypto.HashPassword(data.Password), PassportNumber = data.PassportID });
                 FormsAuthentication.SetAuthCookie(data.Email, false);
                 return RedirectToAction("Index", "Service");
             }

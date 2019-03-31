@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace PL.Web.Infrastructure
+namespace PL.WebApplication.Infrastructure
 {
     public class MinWithdrawalAttribute : ValidationAttribute
     {

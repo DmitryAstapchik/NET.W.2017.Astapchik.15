@@ -15,3 +15,4 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interfa
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Interface\obj\Debug\DAL.Interface.csprojAssemblyReference.cache

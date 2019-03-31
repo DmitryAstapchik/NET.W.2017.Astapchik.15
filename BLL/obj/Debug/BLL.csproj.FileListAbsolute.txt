@@ -27,7 +27,8 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\bin\Deb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\bin\Debug\BLL.Interface.dll.config
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\bin\Debug\DAL.Interface.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\bin\Debug\DAL.Interface.dll.config
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL\obj\Debug\BLL.csproj.CopyComplete

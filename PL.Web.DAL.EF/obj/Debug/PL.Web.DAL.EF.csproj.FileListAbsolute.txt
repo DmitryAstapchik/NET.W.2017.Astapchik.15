@@ -8,9 +8,10 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\bin\Debug\EntityFramework.SqlServer.xml
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\bin\Debug\BLL.Interface.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\bin\Debug\BLL.Interface.dll.config
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\obj\Debug\PL.Web.DAL.EF.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\obj\Debug\PL.Web.DAL.EF.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\obj\Debug\PL.WebApplication.DAL.EF.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\obj\Debug\PL.WebApplication.DAL.EF.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\bin\Debug\PL.Web.DAL.Interface.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\bin\Debug\PL.Web.DAL.Interface.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\obj\Debug\PL.Web.DAL.EF.csprojAssemblyReference.cache
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web.DAL.EF\obj\Debug\PL.Web.DAL.EF.csproj.CopyComplete

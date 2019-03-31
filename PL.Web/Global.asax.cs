@@ -1,7 +1,7 @@
 ﻿using Ninject;
 using Ninject.Modules;
 using Ninject.Web.Mvc;
-using PL.Web.Util;
+using PL.WebApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using Ninject.Web.Mvc.Validation;
 
-namespace PL.Web
+namespace PL.WebApplication
 {
     public class MvcApplication : System.Web.HttpApplication
     {

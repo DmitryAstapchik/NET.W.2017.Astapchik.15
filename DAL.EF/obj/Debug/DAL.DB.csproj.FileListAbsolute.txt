@@ -32,14 +32,14 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\DAL.DB.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\DAL.DB.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\DAL.Interface.dll
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\EntityFramework.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\ORM.EF.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\DAL.Interface.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\DAL.Interface.dll.config
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\ORM.EF.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\ORM.EF.dll.config
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\bin\Debug\EntityFramework.xml
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\obj\Debug\DAL.DB.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\obj\Debug\DAL.DB.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\obj\Debug\DAL.DB.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\obj\Debug\DAL.DB.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\obj\Debug\DAL.DB.csprojAssemblyReference.cache
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.EF\obj\Debug\DAL.DB.csproj.CopyComplete

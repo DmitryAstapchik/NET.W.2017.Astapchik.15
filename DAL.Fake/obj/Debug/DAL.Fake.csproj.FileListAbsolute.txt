@@ -20,7 +20,8 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\bi
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Interface.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Interface.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\bin\Debug\DAL.Interface.dll.config
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.csprojAssemblyReference.cache
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\DAL.Fake\obj\Debug\DAL.Fake.csproj.CopyComplete

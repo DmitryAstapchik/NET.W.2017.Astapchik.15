@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-using PL.Web.Infrastructure;
+using PL.WebApplication.Infrastructure;
 
-namespace PL.Web.Models
+namespace PL.WebApplication.Models
 {
     // [MinDeposit]
     // [MinWithdrawal]

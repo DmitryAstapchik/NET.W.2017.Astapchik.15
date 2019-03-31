@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BLL.Interface;
 
-namespace PL.Web.DAL.Interface.DTO
+namespace PL.WebApplication.DAL.Interface.DTO
 {
     /// <summary>
     /// web app user DTO

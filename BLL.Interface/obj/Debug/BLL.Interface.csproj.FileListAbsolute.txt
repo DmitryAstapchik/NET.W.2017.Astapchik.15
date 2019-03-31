@@ -15,3 +15,4 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Interfa
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\BLL.Interface\obj\Debug\BLL.Interface.csprojAssemblyReference.cache

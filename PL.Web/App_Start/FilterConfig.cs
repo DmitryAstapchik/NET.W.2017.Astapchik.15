@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace PL.Web
+namespace PL.WebApplication
 {
     public class FilterConfig
     {

@@ -21,7 +21,6 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\Ninject.Web.Common.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\Ninject.Web.Common.WebHost.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\Ninject.Web.Mvc.dll
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.DAL.Interface.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.WebApplication.DAL.EF.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\System.Web.Helpers.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\System.Web.Mvc.dll
@@ -41,7 +40,6 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\DependencyResolver.dll.config
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.WebApplication.DAL.EF.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.WebApplication.DAL.EF.dll.config
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.DAL.Interface.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\EntityFramework.xml
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\EntityFramework.SqlServer.xml
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -71,7 +69,10 @@ E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\BLL.dll.config
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\ORM.EF.pdb
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\ORM.EF.dll.config
-E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\obj\Debug\PL.Web.csprojResolveAssemblyReference.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\obj\Debug\PL.Web.csproj.CoreCompileInputs.cache
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\obj\Debug\PL.WebApplication.dll
 E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\obj\Debug\PL.WebApplication.pdb
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.Web.DAL.Interface.dll
+E:\studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\bin\PL.Web.DAL.Interface.pdb
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\obj\Debug\PL.Web.csprojAssemblyReference.cache
+E:\Studying\programming\EPAM training\GitHub\NET.W.2017.Astapchik.15\PL.Web\obj\Debug\PL.Web.csproj.CopyComplete
